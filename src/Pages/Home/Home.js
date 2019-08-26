@@ -6,14 +6,14 @@ const Home = () => {
     <div className="home_container">
       <nav className="nav_bar">
         <div>
-          <img src={require("../../static/menu_btn.png")} alt="menu_btn" />
+          <img src={require("../../img/menu_btn.png")} alt="menu_btn" />
         </div>
         <div>
-          <img src={require("../../static/logo.png")} alt="logo" />
+          <img src={require("../../img/logo.png")} alt="logo" />
           <h1>Wooridoori.com</h1>
         </div>
         <div>
-          <img src={require("../../static/chef.png")} alt="chef" />
+          <img src={require("../../img/chef.png")} alt="chef" />
         </div>
       </nav>
       <div className="rolling_container">
