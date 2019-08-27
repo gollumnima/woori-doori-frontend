@@ -1,0 +1,18 @@
+.home_recipe_wrapper {
+  // font-family: "Poor Story", cursive;
+  font-family: "Arvo", serif;
+
+  .home_recipe_container {
+    .home_recipe_img_container {
+      img {
+        width: 18rem;
+      }
+      .home_recipe_words_container {
+        h4 {
+          color: orange;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

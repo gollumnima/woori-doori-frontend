@@ -1,65 +1,16 @@
 .home_container {
   border: 2px solid #bdbdbd;
   font-family: "Arvo", serif;
-  .nav_bar {
-    position: sticky;
-    display: grid;
-    height: 13vh;
-    grid-template-columns: repeat(5, 1fr);
-    .menu_wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      place-items: center;
-      img {
-        text-align: center;
-        width: 2rem;
-      }
-    }
-    .logo_wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      place-items: center;
 
-      h1 {
-        font-size: 2rem;
-      }
-      .logo {
-        width: 5rem;
-      }
-    }
-    .login_wrap {
-      display: grid;
-      grid-template-columns: 4fr 0.8fr;
-      place-items: center end;
-      .login_btn {
-        width: 2rem;
-      }
-    }
-  }
-
-  .rolling_container {
-    border: 2px solid #bdbdbd;
-  }
-  .home_recipe_wrapper {
-    border: 2px solid #bdbdbd;
-    .home_recipe_container {
-      border: 2px solid #bdbdbd;
-
-      div {
-        border: 2px solid #bdbdbd;
-      }
-    }
-  }
-  .ad {
-    border: 2px solid #bdbdbd;
-  }
-  .info_container {
-    border: 2px solid #bdbdbd;
+  .title_line {
+    margin-top: 5rem;
     h1 {
-      border: 2px solid #bdbdbd;
+      border-bottom: 0.1rem solid black;
     }
-    .info_thumnail {
-      border: 2px solid #bdbdbd;
-    }
+  }
+  .home_recipe_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px;
   }
 }

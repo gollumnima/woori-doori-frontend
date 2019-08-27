@@ -1,0 +1,14 @@
+.info_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  margin-top: 1rem;
+  .info_title {
+    h1 {
+      font-size: 4.5rem;
+    }
+    h2 {
+      color: #bdbdbd;
+    }
+  }
+}

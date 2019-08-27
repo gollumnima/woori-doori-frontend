@@ -2,45 +2,48 @@ import React from "react";
 import Rolling from "../../Components/Home/Rolling";
 import BestRecipe from "../../Components/Home/BestRecipe";
 import Info from "../../Components/Home/Info";
+import Navbar from "../../Components/Home/Navbar";
 import "./Home.scss";
 
-const Home = () => {
-  return (
-    <div className="home_container">
-      <nav className="nav_bar">
-        <div></div>
-        <div className="menu_wrap">
-          <img
-            className="menu_btn"
-            src={require("../../img/menu_btn.png")}
-            alt="menu_btn"
-          />
-        </div>
-        <div className="logo_wrap">
-          <img
-            className="logo"
-            src={require("../../img/logo.png")}
-            alt="logo"
-          />
-          <h1>Wooridoori.com</h1>
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+  render() {
+    return (
+      <div className="home_container">
+        <Navbar />
+        <Rolling />
+
+        <div className="title_line">
+          <h1>Best Recipes</h1>
         </div>
 
-        <div className="login_wrap">
-          <img
-            className="login_btn"
-            src={require("../../img/chef.png")}
-            alt="login"
-          />
-          <div></div>
+        <div className="home_recipe_container">
+          <BestRecipe />
+          <BestRecipe />
+          <BestRecipe />
+          <BestRecipe />
         </div>
-      </nav>
-      <Rolling />
-      <BestRecipe />
-      <BestRecipe />
-      <div className="ad">잠시 광고보고 가실게요~</div>
-      <Info />
-    </div>
-  );
-};
-
+        <div className="title_line">
+          <h1>Recipes of the Month</h1>
+        </div>
+        <div className="home_recipe_container">
+          <BestRecipe />
+          <BestRecipe />
+          <BestRecipe />
+          <BestRecipe />
+        </div>
+        <div className="title_line">
+          <h1>Food News</h1>
+        </div>
+        <div className="food_news_container"></div>
+        <Info />
+        <Info />
+        <Info />
+      </div>
+    );
+  }
+}
 export default Home;
