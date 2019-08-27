@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <div className="home_container">
       <nav className="nav_bar">
-        <div></div>
         <div className="menu_wrap">
           <img
             className="menu_btn"
@@ -31,10 +30,12 @@ const Home = () => {
             src={require("../../img/chef.png")}
             alt="login"
           />
-          <div></div>
         </div>
       </nav>
-      <Rolling />
+      <div className="empty_space"></div>
+      <div className="rolling_container">
+        <Rolling />
+      </div>
       <BestRecipe />
       <BestRecipe />
       <div className="ad">잠시 광고보고 가실게요~</div>

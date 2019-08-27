@@ -5,7 +5,7 @@
     position: sticky;
     display: grid;
     height: 13vh;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     .menu_wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -36,10 +36,10 @@
       }
     }
   }
-
-  .rolling_container {
-    border: 2px solid #bdbdbd;
+  .empty_space {
+    height: 1rem;
   }
+
   .home_recipe_wrapper {
     border: 2px solid #bdbdbd;
     .home_recipe_container {
