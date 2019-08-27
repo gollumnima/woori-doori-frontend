@@ -1,7 +1,12 @@
 .home_container {
   border: 2px solid #bdbdbd;
   font-family: "Arvo", serif;
-
+  .page_wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .title_line {
     margin-top: 5rem;
     h1 {
