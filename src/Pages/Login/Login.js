@@ -25,41 +25,39 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
-      <div className="wrap">
-        <div className="bgBox">
-          <div className="boxText">Great to see you again!</div>
+      <div className="login-wrap ">
+        <div className="login-bgBox">
+          <div className="login-boxText">Great to see you again!</div>
         </div>
-        <div className="loginPage">
-          {/* <div className="loginHeader">Great to see you again!</div> */}
-          <img className="img" src={Logo} alt="wooriduri" />
+        <div className="login-page">
+          <img className="login-img" src={Logo} alt="wooriduri" />
           <input
             onChange={this.inputValueId}
-            className="loginId"
+            className="login-id"
             type="text"
             placeholder="User Name"
           />
           <input
             onChange={this.inputValuePw}
-            className="loginPw"
+            className="login-pw"
             type="password"
             placeholder="Password"
           />
-          {/* <div className="btnMom"> */}
-          <div class="checkbox-container">
+          <div className="login-checkbox-container">
             <input type="checkbox" />
             <label>remember</label>
           </div>
           <button
             onClick={this.buttonAlret}
             className={
-              this.state.valueId && this.state.valuePw ? "btnChange" : "btn"
+              this.state.valueId && this.state.valuePw
+                ? "login-btnChange"
+                : "login-btn"
             }
           >
             Login
           </button>
-          {/* </div> */}
         </div>
       </div>
     );
