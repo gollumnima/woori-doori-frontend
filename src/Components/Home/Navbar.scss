@@ -1,0 +1,38 @@
+.nav_bar {
+  position: fixed;
+  z-index: 999;
+  background-color: white;
+  display: grid;
+  height: 13vh;
+  grid-template-columns: repeat(3, 1fr);
+
+  .menu_wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    img {
+      text-align: center;
+      width: 2rem;
+    }
+  }
+  .logo_wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+
+    h1 {
+      font-size: 2rem;
+    }
+    .logo {
+      width: 5rem;
+    }
+  }
+  .login_wrap {
+    display: grid;
+    grid-template-columns: 4fr 0.8fr;
+    place-items: center end;
+    .login_btn {
+      width: 2rem;
+    }
+  }
+}
