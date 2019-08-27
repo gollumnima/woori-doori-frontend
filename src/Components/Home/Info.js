@@ -1,20 +1,18 @@
 import React from "react";
+import "./info.scss";
 
 const Info = () => {
   return (
     <>
       <div className="info_container">
-        <div className="info_content">
-          <h1>아이스크림 맛있게 먹는 법</h1>
-          <div className="info_thumnail">썸네일1</div>
-        </div>
-        <div className="info_content">
-          <h1>아이스크림 맛있게 먹는 법</h1>
-          <div className="info_thumnail">썸네일22</div>
-        </div>
-        <div className="info_content">
-          <h1>아이스크림 맛있게 먹는 법</h1>
-          <div className="info_thumnail">썸네일333</div>
+        <img
+          className="info_content"
+          src={require("../../img/taco.jpg")}
+          alt="taco"
+        ></img>
+        <div className="info_title">
+          <h1>Would you taco me?</h1>
+          <h2>The word 'taco' is used as 어쩌구저쩌규 요약글</h2>
         </div>
       </div>
     </>
