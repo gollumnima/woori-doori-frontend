@@ -1,18 +1,112 @@
+$doriColor: #fcd45c;
+$white: white;
 * {
   box-sizing: border-box;
 }
-div {
-  background-color: yellow;
-  width: 1000px;
-  height: 1000px;
+body {
+  background-color: $doriColor;
 }
-.backgroundMom {
-  border: 1px solid black;
+.wrap {
+  display: flex;
+  flex-direction: row;
+  // align-items: flex-end;
+  justify-content: flex-end;
+  width: 100vw;
+}
+.loginPage {
+  width: 50%;
+  height: 920px;
+  background-color: $white;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.background {
-  background-color: yellow;
+.bgBox {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.boxText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 30%;
+  color: $white;
+  font-size: 50px;
+}
+.img {
+  margin-top: 25%;
+  margin-bottom: 20%;
+}
+// .loginHeader {
+//   margin-top: 30%;
+//   margin-bottom: 20%;
+//   width: 80%;
+//   font-size: 40px;
+//   text-align: center;
+//   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+//     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+// }
+
+.loginId {
+  width: 60%;
+  height: 6%;
+  margin-bottom: 5%;
+  font-size: 20px;
+  border-top: solid $white;
+  border-left: solid $white;
+  border-right: solid $white;
+}
+input:focus {
+  outline: none;
+}
+.loginPw {
+  width: 60%;
+  height: 6%;
+  font-size: 20px;
+  border-top: solid $white;
+  border-left: solid $white;
+  border-right: solid $white;
+}
+// .btnMom {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//    width: 80%;
+//   height: 15%;
+//   margin-top: 7%;
+// }
+.btn {
+  border: 1px solid $doriColor;
+  width: 40%;
+  height: 5%;
+  border-radius: 15px;
+  font-size: 30px;
+  background: $doriColor;
+  color: $white;
+  margin-top: 10%;
+}
+.btnChange {
+  border: 1px solid skyblue;
+  width: 40%;
+  height: 5%;
+  border-radius: 15px;
+  font-size: 30px;
+  background: skyblue;
+  color: $white;
+  margin-top: 10%;
+}
+.checkbox-container {
+  width: 60%;
+  height: 3%;
+  margin-top: 5%;
+}
+@media (min-aspect-ratio: 16/9) {
+  .target {
+    max-height: none;
+    max-width: 100%;
+  }
 }
