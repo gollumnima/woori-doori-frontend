@@ -13,35 +13,39 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home_container">
-        <Navbar />
-        <Rolling />
+        <>
+          <Navbar />
+        </>
+        <div className="page_wrapper">
+          <Rolling />
 
-        <div className="title_line">
-          <h1>Best Recipes</h1>
-        </div>
+          <div className="title_line">
+            <h1>Best Recipes</h1>
+          </div>
 
-        <div className="home_recipe_container">
-          <BestRecipe />
-          <BestRecipe />
-          <BestRecipe />
-          <BestRecipe />
+          <div className="home_recipe_container">
+            <BestRecipe />
+            <BestRecipe />
+            <BestRecipe />
+            <BestRecipe />
+          </div>
+          <div className="title_line">
+            <h1>Recipes of the Month</h1>
+          </div>
+          <div className="home_recipe_container">
+            <BestRecipe />
+            <BestRecipe />
+            <BestRecipe />
+            <BestRecipe />
+          </div>
+          <div className="title_line">
+            <h1>Food News</h1>
+          </div>
+          <div className="food_news_container"></div>
+          <Info />
+          <Info />
+          <Info />
         </div>
-        <div className="title_line">
-          <h1>Recipes of the Month</h1>
-        </div>
-        <div className="home_recipe_container">
-          <BestRecipe />
-          <BestRecipe />
-          <BestRecipe />
-          <BestRecipe />
-        </div>
-        <div className="title_line">
-          <h1>Food News</h1>
-        </div>
-        <div className="food_news_container"></div>
-        <Info />
-        <Info />
-        <Info />
       </div>
     );
   }
