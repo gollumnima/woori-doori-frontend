@@ -1,18 +1,85 @@
+$doriColor: #fcd45c;
+$white: white;
 * {
   box-sizing: border-box;
 }
-div {
-  background-color: yellow;
-  width: 1000px;
-  height: 1000px;
-}
-.backgroundMom {
-  border: 1px solid black;
+.login-wrap {
+  background-color: $doriColor;
   display: flex;
-  flex-direction: column;
-}
-.background {
-  background-color: yellow;
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100vw;
+
+  .login-page {
+    width: 50%;
+    height: 920px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-bgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  .login-boxText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 30%;
+    color: $white;
+    font-size: 50px;
+  }
+  .login-img {
+    margin-top: 25%;
+    margin-bottom: 20%;
+  }
+  .login-id {
+    width: 60%;
+    height: 6%;
+    margin-bottom: 5%;
+    font-size: 20px;
+    border-top: solid $white;
+    border-left: solid $white;
+    border-right: solid $white;
+  }
+  input:focus {
+    outline: none;
+  }
+  .login-pw {
+    width: 60%;
+    height: 6%;
+    font-size: 20px;
+    border-top: solid $white;
+    border-left: solid $white;
+    border-right: solid $white;
+  }
+  .login-btn {
+    border: 1px solid $doriColor;
+    width: 40%;
+    height: 5%;
+    border-radius: 15px;
+    font-size: 30px;
+    background: $doriColor;
+    color: $white;
+    margin-top: 10%;
+  }
+  .login-btnChange {
+    border: 1px solid skyblue;
+    width: 40%;
+    height: 5%;
+    border-radius: 15px;
+    font-size: 30px;
+    background: skyblue;
+    color: $white;
+    margin-top: 10%;
+  }
+  .login-checkbox-container {
+    width: 60%;
+    height: 3%;
+    margin-top: 5%;
+  }
 }
