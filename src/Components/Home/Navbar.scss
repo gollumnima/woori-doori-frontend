@@ -4,6 +4,7 @@
   background-color: white;
   display: grid;
   height: 13vh;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
 
   .menu_wrap {
@@ -29,7 +30,7 @@
   }
   .login_wrap {
     display: grid;
-    grid-template-columns: 4fr 0.8fr;
+    grid-template-columns: 2.7fr 1fr;
     place-items: center end;
     .login_btn {
       width: 2rem;
