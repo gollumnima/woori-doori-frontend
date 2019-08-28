@@ -1,0 +1,29 @@
+.recipe_container {
+  .cooking_process_container {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    height: 100%;
+    width: 100%;
+    margin-top: 5.6rem;
+    justify-content: center;
+    place-items: center;
+    .recipe_box {
+      margin-left: 5px;
+      .food_name {
+        width: 30rem;
+        border-bottom: 7px solid black;
+        h1 {
+          font-size: 4rem;
+        }
+      }
+      .food_ingredients_box {
+        margin-top: 1rem;
+      }
+      .cooking_process {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
