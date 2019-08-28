@@ -23,18 +23,16 @@ class Home extends React.Component {
               <h1>Best Recipes</h1>
             </div>
 
-            <div className="home_recipe_container">
-              <>
-                <BestRecipe />
-                <BestRecipe />
-                <BestRecipe />
-                <BestRecipe />
-              </>
+            <div className="BRWrapper">
+              <BestRecipe />
+              <BestRecipe />
+              <BestRecipe />
+              <BestRecipe />
             </div>
             <div className="title_line">
               <h1>Recipes of the Month</h1>
             </div>
-            <div className="home_recipe_container">
+            <div className="BRWrapper">
               <BestRecipe />
               <BestRecipe />
               <BestRecipe />
