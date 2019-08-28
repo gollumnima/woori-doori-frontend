@@ -1,8 +1,6 @@
 $doriColor: #fcd45c;
 $white: white;
-* {
-  box-sizing: border-box;
-}
+
 .login-wrap {
   background-color: $doriColor;
   display: flex;
@@ -46,9 +44,7 @@ $white: white;
     border-left: solid $white;
     border-right: solid $white;
   }
-  input:focus {
-    outline: none;
-  }
+
   .login-pw {
     width: 60%;
     height: 6%;
