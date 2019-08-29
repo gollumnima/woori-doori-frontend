@@ -27,12 +27,12 @@ class Navbar extends React.Component {
     return (
       <div className="nav_container">
         <div className="menu_container">
-          {/* <ul>
+          <ul>
             <li>Home</li>
             <li>About</li>
             <li>Recipes</li>
             <li>Food News</li>
-          </ul> */}
+          </ul>
         </div>
         <nav className="nav_bar">
           <div className="menu_wrap">
