@@ -5,7 +5,8 @@
   .home_recipe_container {
     .home_recipe_img_container {
       img {
-        width: 18rem;
+        width: 100%;
+        border-radius: 1rem;
       }
       .home_recipe_words_container {
         h4 {
