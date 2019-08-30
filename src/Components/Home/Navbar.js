@@ -4,7 +4,9 @@ import "./Navbar.scss";
 class Navbar extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      isOpen: false
+    };
   }
   // openMenu = () => {
   //   return (
@@ -21,21 +23,23 @@ class Navbar extends React.Component {
   // };
   // closeMenu = () => {};
   openMenu = () => {
-    return <Menu />;
+    if (this.state.isOpen === false) {
+      this.setState({
+        isOpen: true
+      });
+    } else {
+      this.setState({
+        isOpen: false
+      });
+    }
   };
   render() {
     return (
       <div className="nav_container">
-        <div className="menu_container">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Recipes</li>
-            <li>Food News</li>
-          </ul>
-        </div>
         <nav className="nav_bar">
           <div className="menu_wrap">
+            {this.state.isOpen === true ? <Menu /> : null}
+
             <img
               className="menu_btn"
               src={require("../../img/menu_btn.png")}
