@@ -1,17 +1,17 @@
 .nav_container {
-  // .menu_container {
-  //   overflow-x: hidden;
-  //   height: 100%;
-  //   position: fixed;
-  //   top: 100px;
-  //   font-size: 2rem;
-  //   width: 17.2%;
-  //   background-color: white;
-  //   transition: 0.5s;
-  //   ul {
-  //     list-style: none;
-  //   }
-  // }
+  .menu_container {
+    overflow-x: hidden;
+    height: 100%;
+    position: fixed;
+    top: 100px;
+    font-size: 2rem;
+    width: 17.2%;
+    background-color: white;
+    transition: 0.5s;
+    ul {
+      list-style: none;
+    }
+  }
   .nav_bar {
     position: fixed;
     z-index: 999;
