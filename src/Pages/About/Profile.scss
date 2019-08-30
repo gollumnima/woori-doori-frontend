@@ -1,11 +1,39 @@
 .profile_container {
-  img {
-    width: 150px;
-    border-radius: 50%;
-  }
-  .word_wrapper {
-    h1 {
-      font-size: 2rem;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  .profile_box {
+    border: 1px solid #fcd45c;
+    border-radius: 3%;
+    height: 200px;
+    .photo_wrapper {
+      .triangle {
+        border-top: 120px solid #fcd45c;
+        border-right: 120px solid transparent;
+        position: absolute;
+      }
+      img {
+        width: 150px;
+        border-radius: 50%;
+        position: relative;
+        top: 18px;
+        margin-left: 18px;
+      }
+    }
+    .words_wrapper {
+      h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      span {
+        background-color: #fcd45c;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      h3 {
+        color: #bdbdbd;
+        font-weight: lighter;
+      }
     }
   }
 }
