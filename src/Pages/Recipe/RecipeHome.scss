@@ -1,0 +1,111 @@
+$doriColor: #fcd45c;
+
+.RecipeHome-tag {
+  .RecipeHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vw;
+    .tag_round {
+      width: 80%;
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background-color: #efeeee;
+      .tag {
+        width: 90%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: white;
+      }
+
+      .tag_menu1 {
+        width: 95%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3%;
+
+        .tag_menu_color {
+          width: 25%;
+          height: 100%;
+          background-color: $doriColor;
+          font-size: 2.5rem;
+          text-align: center;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+        }
+        .check_box_warp {
+          border: 1px solid #efeeee;
+          width: 75%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+
+          .check_box {
+            width: 30%;
+            height: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .tag_menu2 {
+        width: 95%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+
+        .tag_menu_color {
+          width: 25%;
+          height: 100%;
+          background-color: $doriColor;
+          font-size: 2.5rem;
+          text-align: center;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+        }
+        .check_box_warp {
+          border: 1px solid #efeeee;
+          width: 75%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+
+          .check_box {
+            width: 30%;
+            height: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .design {
+      border: 1px solid black;
+      width: 85%;
+      height: 50%;
+      margin-top: 2%;
+    }
+  }
+}
