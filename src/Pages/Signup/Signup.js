@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import React from "react";
+// import { withRouter } from "react-router-dom";
 import SmartInput from "../../Components/SmartInput/SmartInput.js";
 import Logo from "../../img/logo.png";
 import "./Signup.scss";

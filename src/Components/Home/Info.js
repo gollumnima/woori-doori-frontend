@@ -1,25 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import "./info.scss";
 
-class Info extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+class Info extends Component {
   render() {
     return (
       <>
-        <div className="info_container">
-          <img
-            className="info_content"
-            src={require("../../img/taco.jpg")}
-            alt="taco"
-          ></img>
-          <div className="info_title">
-            <h1>Would you taco me?</h1>
-            <h2>The word 'taco' is used as 어쩌구저쩌규 요약글</h2>
-          </div>
-        </div>
+        {this.props.baseNewsList.map(el => {
+          return (
+            <div className="info_container">
+              <div className="info_title">
+                <span>{el.category}</span>
+                <h1>{el.title}</h1>
+                <h2>{el.summary}</h2>
+              </div>
+
+              <div className="info_content">
+                <img src={el.thumbnail} alt={el.title}></img>
+              </div>
+            </div>
+          );
+        })}
       </>
     );
   }

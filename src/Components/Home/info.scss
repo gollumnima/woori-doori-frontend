@@ -1,14 +1,40 @@
 .info_container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
-  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+  border-bottom: #bdbdbd 1px solid;
+
   .info_title {
+    background-color: white;
+
+    span {
+      background-color: orange;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+    }
+
     h1 {
-      font-size: 4.5rem;
+      font-size: 40px;
+      font-weight: bold;
+      overflow: hidden;
     }
     h2 {
-      color: #bdbdbd;
+      color: #625d5d;
+      margin-top: 5px;
+      font-size: 20px;
+      overflow: hidden;
+    }
+  }
+  .info_content {
+    img {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+      background-size: auto;
+      background-position: center center;
     }
   }
 }
