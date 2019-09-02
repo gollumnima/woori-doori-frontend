@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./BestRecipe.scss";
 import { Link } from "react-router-dom";
 import HomeRecipeItem from "./HomeRecipeItem";
 

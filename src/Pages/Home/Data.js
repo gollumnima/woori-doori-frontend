@@ -1,12 +1,5 @@
 const Data = [
   {
-    id: "0",
-    name: "떡볶이",
-    img:
-      "https://cdn.pixabay.com/photo/2017/09/10/14/23/toppokki-2735719_960_720.jpg",
-    desc: "한식"
-  },
-  {
     id: "1",
     name: "치킨",
     img:
