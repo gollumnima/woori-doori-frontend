@@ -1,14 +1,21 @@
 import React from "react";
 import "./RecipePage.scss";
+import Data from "../../Pages/Home/Data";
 import Navbar from "../../Components/Home/Navbar";
 import Comment from "../../Components/Home/Comment";
 
 class RecipePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+
+    this.state = {
+      recipeNo: this.props.match.params.id
+    };
   }
+
   render() {
+    let recipeData = Data[this.state.recipeNo];
+
     return (
       <>
         <Navbar />
@@ -17,7 +24,7 @@ class RecipePage extends React.Component {
             <div className="cooking_process_container">
               <div className="recipe_box">
                 <div className="food_name">
-                  <h1>Hamburger</h1>
+                  <h1>{recipeData.name}</h1>
                 </div>
                 <div className="food_ingredients_box">
                   <h1 className="title_line">Ingredients</h1>
@@ -40,7 +47,7 @@ class RecipePage extends React.Component {
               <div className="recipe_img_wrapper">
                 <img
                   className="recipe_img"
-                  src={require("../../img/hamburger.jpg")}
+                  src={recipeData.img}
                   alt="bulgogi"
                 ></img>
               </div>
