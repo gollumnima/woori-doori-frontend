@@ -1,78 +1,87 @@
 $doriColor: #fcd45c;
 
 .RecipeHome-tag {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+
   .RecipeHome {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vw;
+    border: 1px solid black;
+    margin-top: 20px;
+
     .tag_round {
-      width: 80%;
-      height: 20%;
+      width: 85%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       border-radius: 20px;
       background-color: #efeeee;
+      padding-top: 60px;
+      margin-top: 10%;
       .tag {
         width: 90%;
-        height: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 20px;
         background-color: white;
+        padding-top: 30px;
+      }
+      .btn_wrap {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+        .btn {
+          width: 8%;
+          height: 50px;
+          border-radius: 15px;
+          font-size: 1.5rem;
+        }
       }
 
       .tag_menu1 {
         width: 95%;
-        height: 30%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-bottom: 3%;
-
         .tag_menu_color {
           width: 25%;
-          height: 100%;
           background-color: $doriColor;
           font-size: 2.5rem;
           text-align: center;
           border-top-left-radius: 20px;
-          border-bottom-left-radius: 20px;
+          border-top-right-radius: 20px;
         }
         .check_box_warp {
-          border: 1px solid #efeeee;
-          width: 75%;
-          height: 100%;
+          margin-top: 10px;
           display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          border-top-right-radius: 20px;
-          border-bottom-right-radius: 20px;
-
           .check_box {
-            width: 30%;
-            height: 60%;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            font-size: 1.3rem;
+            display: flex;
+            margin-top: 10px;
+            .checkbox {
+              width: 20px;
+              height: 20px;
+            }
           }
         }
       }
       .tag_menu2 {
         width: 95%;
-        height: 30%;
+
         display: flex;
         flex-direction: row;
 
         .tag_menu_color {
           width: 25%;
-          height: 100%;
           background-color: $doriColor;
           font-size: 2.5rem;
           text-align: center;
@@ -82,7 +91,6 @@ $doriColor: #fcd45c;
         .check_box_warp {
           border: 1px solid #efeeee;
           width: 75%;
-          height: 100%;
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -92,7 +100,6 @@ $doriColor: #fcd45c;
 
           .check_box {
             width: 30%;
-            height: 60%;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -102,10 +109,28 @@ $doriColor: #fcd45c;
       }
     }
     .design {
-      border: 1px solid black;
-      width: 85%;
-      height: 50%;
-      margin-top: 2%;
+      // border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      .title_line {
+        // margin-top: 5rem;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        margin-left: 100px;
+        // h1 {
+        //   border-bottom: 0.1rem solid black;
+        // }
+      }
+      .recipe_tap {
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
