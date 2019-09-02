@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./info.scss";
+import HomeNewsItem from "./HomeNewsItem";
 
 class Info extends Component {
   render() {
@@ -7,17 +8,12 @@ class Info extends Component {
       <>
         {this.props.baseNewsList.map(el => {
           return (
-            <div className="info_container">
-              <div className="info_title">
-                <span>{el.category}</span>
-                <h1>{el.title}</h1>
-                <h2>{el.summary}</h2>
-              </div>
-
-              <div className="info_content">
-                <img src={el.thumbnail} alt={el.title}></img>
-              </div>
-            </div>
+            <HomeNewsItem
+              category={el.category}
+              title={el.title}
+              summary={el.summary}
+              thumbnail={el.thumbnail}
+            />
           );
         })}
       </>
