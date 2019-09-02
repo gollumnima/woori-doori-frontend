@@ -12,9 +12,9 @@ class Profile extends React.Component {
               <img src={require("../../img/doori.jpg")} alt="doori" />
             </div>
             <div className="words_wrapper">
-              <h1>Doori Kim</h1>
-              <span>Front-End</span>
-              <h3>메인 담당 및 어쩌구저쩌구</h3>
+              <h1>{this.props.h1}</h1>
+              <span>{this.props.span}</span>
+              <h3>{this.props.h3}</h3>
             </div>
           </div>
         </div>
