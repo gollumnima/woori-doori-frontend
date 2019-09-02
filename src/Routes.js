@@ -6,6 +6,7 @@ import RecipePage from "./Pages/Recipe/RecipePage";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import ReciepeHome from "./Pages/Recipe/RecipeHome";
+import News_page from "./Pages/News_page/News_page";
 
 class Routes extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/recipehome" component={ReciepeHome} />
+          <Route exact path="/news_page" component={News_page} />
         </Switch>
       </Router>
     );
