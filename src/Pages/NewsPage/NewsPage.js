@@ -40,5 +40,3 @@ class NewsPage extends React.Component {
 }
 
 export default NewsPage;
-
-
