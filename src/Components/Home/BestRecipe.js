@@ -1,25 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import "./BestRecipe.scss";
+import HomeRecipeItem from "./HomeRecipeItem";
 
-class BestRecipe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+class BestRecipe extends Component {
   render() {
     return (
       <>
-        <div className="home_recipe_wrapper">
-          <div className="home_recipe_container">
-            <div className="home_recipe_img_container">
-              <img src={require("../../img/toppokki.jpg")} alt="grill"></img>
-              <div className="home_recipe_words_container">
-                <h4 className="home_recipe_category">Korean</h4>
-                <h2 className="home_recipe_name">Toppokki</h2>
-              </div>
-            </div>
-          </div>
-        </div>
+        {this.props.baseRecipeList.map(el => {
+          return <HomeRecipeItem img={el.img} desc={el.desc} name={el.name} />;
+        })}
       </>
     );
   }

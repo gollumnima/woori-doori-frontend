@@ -1,25 +1,24 @@
 import React from "react";
 import Rolling from "../../Components/Home/Rolling";
-import BestRecipe from "../../Components/Home/BestRecipe";
 import Info from "../../Components/Home/Info";
 import Navbar from "../../Components/Home/Navbar";
+import Data from "./Data.js";
+import Data2nd from "./Data2nd.js";
+import DataNews from "./DataNews.js";
 import "./Home.scss";
+import BestRecipe from "../../Components/Home/BestRecipe";
 
-// const data = [
-//   { id: 1, name: "복희", img: "url어쩌구저쩌구", desc: "존맛탱" },
-//   { id: 2, name: "치킨", img: "url어쩌구저쩌구", desc: "jmt" },
-//   { id: 3, name: "마카롱", img: "url어쩌구저쩌구", desc: "달달쓰" }
-// ];
 class Home extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
+
   render() {
-    // let food = [];
-    // for(let i=0; i < data.length; i++) {
-    //   food.push(<BestRecipe id={data[i].id, desc={data[i].desc}}/>)
-    // }
+    let DataA = Data;
+    let DataB = Data2nd;
+    let DataC = DataNews;
+
     return (
       <div className="home_container">
         <>
@@ -31,25 +30,14 @@ class Home extends React.Component {
             <div className="title_line">
               <h1>Best Recipes</h1>
             </div>
-
             <div className="BRWrapper">
-              {/* {data.map(el => {
-                return <BestRecipe key={index} info={el} />;
-              })} */}
-
-              <BestRecipe />
-              <BestRecipe />
-              <BestRecipe />
-              <BestRecipe />
+              <BestRecipe baseRecipeList={DataA} />
             </div>
             <div className="title_line">
               <h1>Recipes of the Month</h1>
             </div>
             <div className="BRWrapper">
-              <BestRecipe />
-              <BestRecipe />
-              <BestRecipe />
-              <BestRecipe />
+              <BestRecipe baseRecipeList={DataB} />
             </div>
           </div>
           <div className="news_tap">
@@ -57,9 +45,7 @@ class Home extends React.Component {
               <h1>Food News</h1>
             </div>
             <div className="food_news_container"></div>
-            <Info />
-            <Info />
-            <Info />
+            <Info baseNewsList={DataC} />
           </div>
         </div>
       </div>
