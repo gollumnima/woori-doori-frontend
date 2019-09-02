@@ -1,0 +1,45 @@
+.reply_container {
+  width: 77%;
+  margin-left: 11%;
+  margin-top: 5%;
+
+  .text_container {
+    width: 100%;
+    textarea {
+      width: 60%;
+      height: 110px;
+      text-align: left;
+    }
+
+    .count_box {
+      margin-left: 56%;
+      margin-top: 15px;
+      span {
+        font-size: 10px;
+      }
+    }
+    .btn_reply {
+      background-color: #f2d35c;
+      border-style: none;
+      color: #0f0f0f;
+      width: 5%;
+      margin-left: 28%;
+    }
+  }
+  .reply_box {
+    .reply {
+      margin: 20px;
+      width: 50%;
+
+      h3 {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      span {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

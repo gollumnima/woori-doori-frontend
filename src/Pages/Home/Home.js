@@ -32,6 +32,7 @@ class Home extends React.Component {
             </div>
             <div className="BRWrapper">
               <BestRecipe baseRecipeList={DataA} />
+              <BestRecipe baseRecipeList={DataA} />
             </div>
             <div className="title_line">
               <h1>Recipes of the Month</h1>

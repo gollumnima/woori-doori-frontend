@@ -10,7 +10,7 @@ const Data2nd = [
     id: "2",
     name: "샐러드",
     img:
-      "https://cdn.pixabay.com/photo/2016/11/21/11/57/avocado-1844894_960_720.jpg",
+      "https://cdn.pixabay.com/photo/2017/09/30/15/10/pizza-2802332_960_720.jpg",
     desc: "양식"
   },
   {
