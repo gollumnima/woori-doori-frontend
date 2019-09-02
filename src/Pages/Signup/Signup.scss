@@ -1,0 +1,71 @@
+$doriColor: #fcd45c;
+$white: white;
+
+.signup_container {
+  background-color: $doriColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100vw;
+
+  /* 왼쪽 화면 */
+  .signup_left_part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .signup_boxText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 30%;
+    color: $white;
+    font-size: 50px;
+  }
+
+  /* 오른쪽 화면 */
+  .signup_right_part {
+    width: 50%;
+    height: 920px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup_input_wrap {
+    width: 60%;
+    // border: 1px solid red;
+    padding: 20px auto;
+    text-align: center;
+  }
+
+  .signup_img {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .signup_button_wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    // border: 1px solid red;
+    padding: 20px auto;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+  }
+
+  .signup_button {
+    width: 150px;
+    border: 1px solid $doriColor;
+    border-radius: 15px;
+    font-size: 30px;
+    background: $doriColor;
+    color: $white;
+    margin-top: 10%;
+    padding: 5px 20px 5px 20px;
+  }
+}

@@ -1,0 +1,13 @@
+.menu_container {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  // transition: 1s;
+  background-color: white;
+  li {
+    font-size: 35px;
+    position: relative;
+    list-style: none;
+    margin-top: 12px;
+  }
+}
