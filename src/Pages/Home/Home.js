@@ -1,21 +1,17 @@
 import React from "react";
 import Rolling from "../../Components/Home/Rolling";
-import BestRecipe from "../../Components/Home/BestRecipe";
 import Info from "../../Components/Home/Info";
 import Navbar from "../../Components/Home/Navbar";
 import Data from "./Data.js";
 import Data2nd from "./Data2nd.js";
 import DataNews from "./DataNews.js";
 import "./Home.scss";
+import BestRecipe from "../../Components/Home/BestRecipe";
 
 class Home extends React.Component {
   constructor() {
     super();
-    this.state = {
-      error: null,
-      isLoaded: false,
-      data: []
-    };
+    this.state = {};
   }
 
   render() {
