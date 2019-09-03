@@ -4,6 +4,7 @@ import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
 import Navbar from "../../Components/Home/Navbar";
 import BestRecipe from "../../Components/Home/BestRecipe";
 import Data from "../Home/Data";
+
 let category = [
   {
     title: "국가",
@@ -15,14 +16,51 @@ let category = [
   }
 ];
 
+const CategoryData = [
+  {
+    title: [1, "나라별"],
+    items: [[1, "한식"], [2, "중식"], [3, "양식"], [4, "일식"]]
+  },
+  {
+    title: [2, "식자재별"],
+    items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
+  }
+];
+
 class RecipeHome extends React.Component {
   constructor() {
     super();
-    this.state = { state: 0 };
+    this.state = {
+      category: [],
+      selectedCategory: {},
+      recipeList: []
+    };
   }
-  onChangedRadio = () => {
-    this.setState({});
+
+  componentDidMount() {
+    // fetch (카타고리를 읽어오기)
+    this.state.category = CategoryData;
+
+    for (let index = 0; index < CategoryData.length; index++) {
+      this.state.selectedCategory[CategoryData[index].title[1]] = -1;
+    }
+
+    this.setState({
+      category: this.state.category,
+      selectedCategory: this.state.selectedCategory
+    });
+  }
+
+  onChangeCategory = e => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    this.state.selectedCategory[name] = Number(value);
+    this.setState({
+      selectedCategory: this.state.selectedCategory
+    });
   };
+
   render() {
     let DataA = Data;
     return (
@@ -33,18 +71,19 @@ class RecipeHome extends React.Component {
           <div className="RecipeHome">
             <div className="tag_round">
               <div className="tag">
-                {category.map((el, key) => {
+                {this.state.category.map((el, key) => {
                   return (
                     <RecipeHomeCategory
                       key={key}
-                      title={el.title}
+                      title={el.title[1]}
                       items={el.items}
+                      onChangeCategory={this.onChangeCategory}
                     />
                   );
                 })}
               </div>
-              <div className="btn_wrap">
-                <button onClick={this.onChangedRadio} className="btn">
+              <div className="Recipe_btn_wrap">
+                <button onClick={this.changeValue} className="Recipe_btn">
                   확인
                 </button>
               </div>
@@ -58,6 +97,7 @@ class RecipeHome extends React.Component {
               </div>
             </div>
           </div>
+          <div className="dateBox"></div>
         </div>
       </>
     );

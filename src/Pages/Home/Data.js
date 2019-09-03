@@ -4,7 +4,10 @@ const Data = [
     name: "떡볶이",
     img:
       "https://cdn.pixabay.com/photo/2017/09/10/14/23/toppokki-2735719_960_720.jpg",
-    desc: "한식"
+    desc: "한식",
+    material: "비고기",
+    ingredients: "[떡, 고추장, 어묵, 계란]",
+    recipe: "[1.떡을 불린다, 2.끓인다,3.먹는다]"
   },
   {
     id: "2",
