@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../../Pages/Menu/Menu";
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
 class Navbar extends React.Component {
   constructor() {
@@ -35,7 +36,9 @@ class Navbar extends React.Component {
                 </h1>
               </div>
               <div className="login_wrap">
-                <h1>Login</h1>
+                <Link to="/login">
+                  <h1>Login</h1>
+                </Link>
               </div>
             </div>
           </div>
