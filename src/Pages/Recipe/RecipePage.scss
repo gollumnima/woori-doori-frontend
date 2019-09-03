@@ -1,43 +1,43 @@
 .recipe_page_total_wrap {
   width: 100%;
-  max-width: 960px;
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Noto Serif KR", serif;
 
   .recipe_container {
     .food_name {
-      width: 30rem;
       border-bottom: 7px solid black;
-      margin-top: 100px;
-      text-align: center;
+      margin-top: 150px;
+      width: 60%;
+
       h1 {
         font-size: 60px;
         margin-top: auto;
+        text-align: left;
       }
     }
     .cooking_process_container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-gap: 50px;
-      margin-top: 2%;
-      justify-content: center;
-      place-items: center;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
       .recipe_box {
+        display: flex;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 50px;
         .food_ingredients_box {
-          margin-top: 1rem;
           h1 {
-            font-size: 20px;
-            font-weight: 500;
+            font-size: 30px;
+            font-weight: 600;
           }
           h5 {
             margin-top: 10px;
           }
         }
         .cooking_process {
-          margin-top: 4rem;
           h1 {
-            font-size: 20px;
-            font-weight: 500;
+            font-size: 30px;
+            font-weight: 600;
           }
           h3 {
             margin-top: 10px;
@@ -46,6 +46,7 @@
       }
       .recipe_img_wrapper {
         img {
+          background-size: cover;
         }
       }
     }
