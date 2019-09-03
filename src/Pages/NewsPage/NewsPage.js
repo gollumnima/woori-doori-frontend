@@ -31,9 +31,7 @@ class NewsPage extends React.Component {
     return (
       <div>
         <Navbar />
-        {Data.map((el, item) => {
-          return <NewsPageSon title={el.title} text={el.text} img={el.img} />;
-        })}
+        <NewsPageSon />;
       </div>
     );
   }

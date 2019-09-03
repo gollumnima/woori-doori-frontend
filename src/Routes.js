@@ -6,6 +6,8 @@ import RecipePage from "./Pages/Recipe/RecipePage";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import RecipeHome from "./Pages/Recipe/RecipeHome";
+import NewsHome from "./Pages/NewsPage/NewsHome";
+import NewsPage from "./Pages/NewsPage/NewsPage";
 
 class Routes extends React.Component {
   render() {
@@ -18,6 +20,8 @@ class Routes extends React.Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/home" component={Home} />
           {/* <Route path="/recipe_page" component={RecipePage} /> */}
+          <Route exact path="/news_page/:id" component={NewsPage} />
+          <Route exact path="/newshome" component={NewsHome} />
           <Route exact path="/recipe_page/:id" component={RecipePage} />
           <Route exact path="/recipehome" component={RecipeHome} />
         </Switch>
