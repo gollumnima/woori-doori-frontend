@@ -77,6 +77,11 @@ video {
   font-weight: normal;
   letter-spacing: 1px;
 }
+a {
+  text-decoration: none;
+  outline: 0;
+  color: inherit;
+}
 ​ * {
   box-sizing: border-box;
   text-decoration: none;

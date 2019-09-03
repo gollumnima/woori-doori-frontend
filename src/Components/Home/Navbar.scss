@@ -3,6 +3,8 @@
   position: fixed;
   z-index: 999;
   width: 100%;
+  top: 0;
+  left: 0;
 
   .nav_bar {
     background-color: white;
@@ -19,11 +21,12 @@
 
       .logo_wrap {
         h1 {
-          font-size: 2rem;
+          font-size: 50px;
         }
       }
       .right {
         display: flex;
+        font-size: 20px;
         .menu_wrap {
           margin-right: 20px;
         }
