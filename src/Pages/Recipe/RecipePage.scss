@@ -3,24 +3,24 @@
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+
   .recipe_container {
+    .food_name {
+      width: 30rem;
+      border-bottom: 7px solid black;
+      h1 {
+        font-size: 60px;
+        margin-top: auto;
+      }
+    }
     .cooking_process_container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 5px;
-      width: 100%;
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 50px;
       margin-top: 2%;
       justify-content: center;
       place-items: center;
       .recipe_box {
-        .food_name {
-          width: 30rem;
-          border-bottom: 7px solid black;
-          h1 {
-            font-size: 60px;
-            margin-top: auto;
-          }
-        }
         .food_ingredients_box {
           margin-top: 1rem;
           h1 {

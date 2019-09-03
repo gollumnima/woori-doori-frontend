@@ -21,11 +21,11 @@ class RecipePage extends React.Component {
         <Navbar />
         <div className="recipe_page_total_wrap">
           <div className="recipe_container">
+            <div className="food_name">
+              <h1>{recipeData.name}</h1>
+            </div>
             <div className="cooking_process_container">
               <div className="recipe_box">
-                <div className="food_name">
-                  <h1>{recipeData.name}</h1>
-                </div>
                 <div className="food_ingredients_box">
                   <h1 className="title_line">Ingredients</h1>
                   <h5>
