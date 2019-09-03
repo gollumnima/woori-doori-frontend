@@ -13,6 +13,10 @@ import "./RecipeHome.scss";
 // ];
 
 class RecipeHomeCategory extends React.Component {
+  onChangedRadio = e => {
+    this.props.onChangeCategory(e);
+  };
+
   render() {
     return (
       <div className="tag_menu1">
@@ -26,12 +30,12 @@ class RecipeHomeCategory extends React.Component {
                     className="checkbox"
                     type="radio"
                     key={index}
-                    name={this.props.items}
-                    // value={index}
+                    name={this.props.title}
+                    value={index + 1}
                     // // checked={this.state.selectedOption}
-                    // onChange={this.onChangedRadio}
+                    onChange={this.onChangedRadio}
                   />
-                  {item}
+                  {item[1]}
                 </label>
               );
             })}
