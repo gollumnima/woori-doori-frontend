@@ -30,34 +30,36 @@ class Login extends React.Component {
         <div className="login-bgBox">
           <div className="login-boxText">Great to see you again!</div>
         </div>
-        <div className="login-page">
-          <img className="login-img" src={Logo} alt="wooriduri" />
-          <input
-            onChange={this.inputValueId}
-            className="login-id"
-            type="text"
-            placeholder="User Name"
-          />
-          <input
-            onChange={this.inputValuePw}
-            className="login-pw"
-            type="password"
-            placeholder="Password"
-          />
-          <div className="login-checkbox-container">
-            <input type="checkbox" />
-            <label>remember</label>
+        <div className="login-page-box">
+          <div className="login-page">
+            <img className="login-img" src={Logo} alt="wooriduri" />
+            <input
+              onChange={this.inputValueId}
+              className="login-id"
+              type="text"
+              placeholder="User Name"
+            />
+            <input
+              onChange={this.inputValuePw}
+              className="login-pw"
+              type="password"
+              placeholder="Password"
+            />
+            <div className="login-checkbox-container">
+              <input type="checkbox" className="login-remember" />
+              <label className="login-remember">remember</label>
+            </div>
+            <button
+              onClick={this.buttonAlret}
+              className={
+                this.state.valueId && this.state.valuePw
+                  ? "login-btnChange"
+                  : "login-btn"
+              }
+            >
+              Login
+            </button>
           </div>
-          <button
-            onClick={this.buttonAlret}
-            className={
-              this.state.valueId && this.state.valuePw
-                ? "login-btnChange"
-                : "login-btn"
-            }
-          >
-            Login
-          </button>
         </div>
       </div>
     );

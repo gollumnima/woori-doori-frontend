@@ -6,12 +6,19 @@ $white: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100vw;
+  height: 100vh;
 
-  .login-page {
+  .login-page-box {
     width: 50%;
-    height: 920px;
     background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-page {
+    width: 320px;
+    height: 568px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,19 +34,20 @@ $white: white;
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 30%;
     color: $white;
     font-size: 50px;
   }
   .login-img {
     margin-top: 25%;
     margin-bottom: 20%;
+    width: 30%;
+    margin-top: 120px;
+    margin-bottom: 120px;
   }
   .login-id {
     width: 60%;
-    height: 6%;
     margin-bottom: 5%;
-    font-size: 20px;
+    font-size: 1rem;
     border-top: solid $white;
     border-left: solid $white;
     border-right: solid $white;
@@ -47,8 +55,7 @@ $white: white;
 
   .login-pw {
     width: 60%;
-    height: 6%;
-    font-size: 20px;
+    font-size: 1rem;
     border-top: solid $white;
     border-left: solid $white;
     border-right: solid $white;
@@ -56,7 +63,7 @@ $white: white;
   .login-btn {
     border: 1px solid $doriColor;
     width: 40%;
-    height: 5%;
+
     border-radius: 15px;
     font-size: 30px;
     background: $doriColor;
@@ -66,7 +73,7 @@ $white: white;
   .login-btnChange {
     border: 1px solid skyblue;
     width: 40%;
-    height: 5%;
+
     border-radius: 15px;
     font-size: 30px;
     background: skyblue;
@@ -74,8 +81,58 @@ $white: white;
     margin-top: 10%;
   }
   .login-checkbox-container {
-    width: 60%;
-    height: 3%;
-    margin-top: 5%;
+    width: 78%;
+    padding: 30px;
+
+    .login-remember {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .login-wrap {
+    background-color: white;
+    width: 66%;
+    page {
+      width: 320px;
+      height: 568px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+@media (max-width: 360px) {
+  .login-wrap {
+    background-color: white;
+    width: 66%;
+    page {
+      width: 360px;
+      height: 568px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+@media (max-height: 320 px) {
+  .login-wrap {
+    background-color: white;
+    width: 66%;
+    .login-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .login-img {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+      .login-btn {
+        margin-top: -5px;
+      }
+    }
   }
 }
