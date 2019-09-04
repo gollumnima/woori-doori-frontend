@@ -2,7 +2,7 @@ import React from "react";
 import "./RecipeHome.scss";
 import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
 import Navbar from "../../Components/Home/Navbar";
-import BestRecipe from "../../Components/Home/BestRecipe";
+import HomeRecipeItem from "../../Components/Home/HomeRecipeItem";
 import Data from "../Home/Data";
 
 let category = [
@@ -84,13 +84,39 @@ class RecipeHome extends React.Component {
                 </div>
               </div>
               <div className="design">
-                {/* <div className="title_line">
+                {/* <BestRecipe baseRecipeList={Data} /> */}
+
+                <HomeRecipeItem
+                  id="3"
+                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
+                  desc="test"
+                  name="test"
+                />
+                <HomeRecipeItem
+                  id="3"
+                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
+                  desc="test"
+                  name="test"
+                />
+                <HomeRecipeItem
+                  id="3"
+                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
+                  desc="test"
+                  name="test"
+                />
+                <HomeRecipeItem
+                  id="3"
+                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
+                  desc="test"
+                  name="test"
+                />
+              </div>
+              {/* <div className="title_line">
                   <h1>Best Recipes</h1>
                 </div>
                 <div className="recipe_tap"> */}
-                {/* <BestRecipe baseRecipeList={DataA} /> */}
-                {/* </div> */}
-              </div>
+              {/* <BestRecipe baseRecipeList={DataA} /> */}
+              {/* </div> */}
             </div>
           </div>
         </div>
