@@ -9,22 +9,25 @@ $doriColor: #fcd45c;
   margin-top: 130px;
 
   .RecipeButton {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
     text-align: center;
-    padding: 20px;
-    width: 240px;
-    border-radius: 20px;
-    margin-right: 15px;
-    margin-top: 20px;
-    border: 1px solid $doriColor;
+    padding: 15px 10px;
     cursor: pointer;
-  }
-
-  .RecipeButton:last-child {
-    margin-right: 0;
-  }
-  .RecipeButton:hover {
-    background-color: $doriColor;
-    color: white;
+    // background: #7b7b7b;
+    border-top: 2px solid #bdbdbd;
+    border-bottom: 2px solid #bdbdbd;
+    //   p {
+    //     border-right: 2px solid #bdbdbd;
+    //     padding: 0 12px;
+    //   }
+    // }
+    // .RecipeButton:last-child {
+    //   p {
+    //     border-right: 0;
+    //   }
   }
 
   .RecipeHome {
@@ -32,89 +35,32 @@ $doriColor: #fcd45c;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .tag_round {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 15px;
-      margin-top: 130px;
-      .tag {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        // border-radius: 20px;
-        background-color: white;
-      }
-      .tag_menu1 {
-        .tag_menu_color {
-          font-size: 1.7rem;
-          padding-top: 15px;
-        }
-        .check_box_warp {
-          margin-bottom: 10px;
-          .check_box {
-            font-size: 1.3rem;
-            display: flex;
-          }
-        }
-      }
-      .tag_menu2 {
-        .tag_menu_color {
-          background-color: $doriColor;
-          font-size: 2.5rem;
-          text-align: center;
-        }
-        .check_box_warp {
-          border: 1px solid #efeeee;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+      // padding-top: 15px;
+      // margin-top: 130px;
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 5px;
 
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-
-          .check_box {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-      }
-    }
-    .Recipe_btn_wrap {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding-top: 30px;
-    }
-    .Recipe_btn {
-      font-size: 24px;
-      width: 180px;
-      padding: 10px;
-      border-radius: 20px;
-    }
-    .design {
-      display: flex;
-
-      margin-top: 120px;
-
-      .title_line {
-        border-bottom: 1px solid black;
-        margin-bottom: 15px;
-      }
-      .recipe_tap {
+      .check_box {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        // border-bottom: 2px solid #bdbdbd;
+        // border-top: 2px solid #bdbdbd;
       }
+    }
+
+    .design {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      margin-top: 120px;
     }
   }
-}
-
-.dateBox {
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
 }
