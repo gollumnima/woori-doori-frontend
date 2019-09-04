@@ -6,7 +6,7 @@ import RecipePage from "./Pages/Recipe/RecipePage";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import RecipeHome from "./Pages/Recipe/RecipeHome";
-import NewsPage from "./Pages/NewsPage/NewsPage";
+// import NewsHome from "./Pages/NewsHome/NewsHome";
 
 class Routes extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class Routes extends React.Component {
           {/* <Route path="/recipe_page" component={RecipePage} /> */}
           <Route exact path="/recipe_page/:id" component={RecipePage} />
           <Route exact path="/recipehome" component={RecipeHome} />
-          <Route exact path="/news_page/:id" component={NewsPage} />
+          {/* <Route exact path="/newsHome" component={NewsHome} /> */}
         </Switch>
       </Router>
     );
