@@ -26,11 +26,12 @@ class Navbar extends React.Component {
         <nav className="nav_bar">
           <div className="menu_wrap_container page_wrapper">
             {this.state.isOpen === true ? <Menu /> : null}
-            <div className="logo_wrap">
-              <Link to="/Home">
+            <Link to="/Home">
+              <div className="logo_wrap">
+                {/* <img src={require("../../img/logo.png")} alt="logo"></img> */}
                 <h1>Wooridoori.com</h1>
-              </Link>
-            </div>
+              </div>
+            </Link>
             <div className="right">
               <div className="menu_wrap">
                 <h1 className="menu_btn" onClick={this.openMenu}>
