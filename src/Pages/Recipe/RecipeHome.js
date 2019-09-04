@@ -65,35 +65,31 @@ class RecipeHome extends React.Component {
     let DataA = Data;
     return (
       <>
-        <Navbar />
-
-        <div className="RecipeHome-tag">
-          <div className="RecipeHome">
-            <div className="tag_round">
-              <div className="tag">
-                {this.state.category.map((el, key) => {
-                  return (
-                    <RecipeHomeCategory
-                      key={key}
-                      title={el.title[1]}
-                      items={el.items}
-                      onChangeCategory={this.onChangeCategory}
-                    />
-                  );
-                })}
+        <div className="RecipeWrap">
+          <Navbar />
+          <div className="RecipeHome-tag">
+            <div className="RecipeHome">
+              <div className="tag_round">
+                <div className="tag">
+                  {this.state.category.map((el, key) => {
+                    return (
+                      <RecipeHomeCategory
+                        key={key}
+                        title={el.title[1]}
+                        items={el.items}
+                        onChangeCategory={this.onChangeCategory}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-              <div className="btn_wrap">
-                <button onClick={this.changeValue} className="btn">
-                  확인
-                </button>
-              </div>
-            </div>
-            <div className="design">
-              <div className="title_line">
-                <h1>Best Recipes</h1>
-              </div>
-              <div className="recipe_tap">
-                <BestRecipe baseRecipeList={DataA} />
+              <div className="design">
+                {/* <div className="title_line">
+                  <h1>Best Recipes</h1>
+                </div>
+                <div className="recipe_tap"> */}
+                {/* <BestRecipe baseRecipeList={DataA} /> */}
+                {/* </div> */}
               </div>
             </div>
           </div>
