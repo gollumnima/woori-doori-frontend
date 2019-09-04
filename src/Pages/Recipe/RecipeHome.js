@@ -24,6 +24,14 @@ const CategoryData = [
   {
     title: [2, "식자재별"],
     items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
+  },
+  {
+    title: [2, "식자재별"],
+    items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
+  },
+  {
+    title: [2, "식자재별"],
+    items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
   }
 ];
 
@@ -68,24 +76,22 @@ class RecipeHome extends React.Component {
         <div className="RecipeWrap">
           <Navbar />
           <div className="RecipeHome-tag">
-            <div className="RecipeHome">
+            <div className="RecipeHome page_wrapper">
               <div className="tag_round">
-                <div className="tag">
-                  {this.state.category.map((el, key) => {
-                    return (
-                      <RecipeHomeCategory
-                        key={key}
-                        title={el.title[1]}
-                        items={el.items}
-                        onChangeCategory={this.onChangeCategory}
-                      />
-                    );
-                  })}
-                </div>
+                {this.state.category.map((el, key) => {
+                  return (
+                    <RecipeHomeCategory
+                      key={key}
+                      title={el.title[1]}
+                      items={el.items}
+                      onChangeCategory={this.onChangeCategory}
+                    />
+                  );
+                })}
               </div>
               <div className="design">
-                {/* <BestRecipe baseRecipeList={Data} /> */}
-
+                {/* {Data.map(el,items)=>{return(<HomeRecipeItem id={el.id/>)}
+                 */}
                 <HomeRecipeItem
                   id="3"
                   img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
@@ -104,6 +110,18 @@ class RecipeHome extends React.Component {
                   desc="test"
                   name="test"
                 />
+                <HomeRecipeItem
+                  id="3"
+                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
+                  desc="test"
+                  name="test"
+                />{" "}
+                <HomeRecipeItem
+                  id="3"
+                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
+                  desc="test"
+                  name="test"
+                />{" "}
                 <HomeRecipeItem
                   id="3"
                   img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
