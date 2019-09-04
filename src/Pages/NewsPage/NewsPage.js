@@ -1,42 +1,127 @@
 import React from "react";
-import NewsPageSon from "./NewsPageSon.js";
 import "./NewsPage.scss";
+import Comment from "../../Components/Home/Comment";
 import Navbar from "../../Components/Home/Navbar";
+import axios from "axios";
 
-let Data = [
-  {
-    title: "요리정보",
-    text:
-      "맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다맛있게만다맛있게만든다맛있게만든다맛있게만든다",
-    img:
-      "https://cdn.pixabay.com/photo/2019/08/26/22/04/steak-4432946_960_720.jpg"
-  },
-  {
-    title: "CamelCase",
-    text:
-      "CamelCase란 단어가 합쳐진 부분마다 맨 처음 글자를 대문자로 표기하는 방법입니다.두 개 이상의 단어가 모인 합성어에서 사용됩니다. 쌍봉낙타의 등과 닮았다고 하여 CamelCase라는 이름이 붙었습니다.[ ex) MsgBoxBtn1, sockBind, PrintLblText,… ]◇ lowerCamelCasecamelCase에서, 맨 앞글자를 소문자로 표기하는 것을 뜻합니다. 나머지 뒤에 따라붙는 단어들의 앞글자는 모두 대문자로 표기합니다.",
-    img:
-      "https://cdn.pixabay.com/photo/2019/08/26/22/04/steak-4432946_960_720.jpg"
-  },
-  {
-    title: "Spake case",
-    text:
-      "snake_case란 단어가 합쳐진 부분마다 중간에 언더라인을 붙여 주는 방법입니다.일반적으로는 언더라인을 사용하나, 언더라인 대신 하이픈(-)을 써도 snake-case라고 할 수 있습니다. (참조)그렇지만 가능한 한 언더라인을 사용하는 편이 무난합니다.[ ex) Night_Of_Knights, noumi_kudryavka_anatolyevna_strugatskaya,… ]snake_case는 Train_Case와 spinal_case로 세부적으로 나눌 수 있습니다.",
-    img:
-      "https://cdn.pixabay.com/photo/2019/08/26/22/04/steak-4432946_960_720.jpg"
-  }
-];
 class NewsPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      news_data: {}
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://10.58.4.51:8080/news/0/0")
+      .then(response => response.json())
+      .then(result =>
+        this.setState({
+          isLoaded: true,
+          news_data: result[0]
+        })
+      );
+  }
+
+  // show_news = async () => {
+  //   const response = await fetch("http://10.58.4.51:8080/news/0/0", {
+  //     method: "GET",
+  //     body: JSON.stringify()
+  //   });
+  // };
+  // componentDidMount() {
+  //   this.show_news();
+  // }
+
   render() {
+    const { news_data } = this.state;
+
     return (
-      <div>
+      <>
         <Navbar />
-        {Data.map((el, item) => {
-          return <NewsPageSon title={el.title} text={el.text} img={el.img} />;
-        })}
-      </div>
+        <div className="recipe_page_total_wrap">
+          <div className="recipe_page_container">
+            <div className="food_name">
+              <h1>{this.state.news_data.title}</h1>
+            </div>
+            <div className="recipe_container">
+              <div className="cooking_process">
+                <div className="ingredients_box">
+                  <h1 className="title_line">{this.state.news_data.tag}</h1>
+                  <h5> </h5>
+                </div>
+                <div className="recipe_box">
+                  <h1 className="title_line">빈값</h1>
+                  <h5>
+                    <ul>
+                      <li>{this.state.news_data.content}</li>
+                    </ul>
+                  </h5>
+                </div>
+              </div>
+              <div className="foodie">
+                <img src={this.state.news_data.image_url} alt="hamburger"></img>
+              </div>
+            </div>
+          </div>
+          <Comment />
+        </div>
+      </>
     );
   }
 }
 
 export default NewsPage;
+
+// 1차 시도 fetch
+// return (
+//   <>
+//     {this.state.news_data.map(el => {
+//       return (
+//         <>
+//           <Navbar />
+//           <div className="recipe_page_total_wrap">
+//             <div className="recipe_page_container">
+//               <div className="food_name">
+//                 <h1>{el.title}</h1>
+//               </div>
+//               <div className="recipe_container">
+//                 <div className="cooking_process">
+//                   <div className="ingredients_box">
+//                     <h1 className="title_line">{el.tag}</h1>
+//                     <h5> </h5>
+//                   </div>
+//                   <div className="recipe_box">
+//                     <h1 className="title_line">빈값</h1>
+//                     <h5>
+//                       <ul>
+//                         <li>{el.content}</li>
+//                       </ul>
+//                     </h5>
+//                   </div>
+//                 </div>
+//                 <div className="foodie">
+//                   <img src={el.image_url} alt="hamburger"></img>
+//                 </div>
+//               </div>
+//             </div>
+//             <Comment />
+//           </div>
+//         </>
+//       );
+//     })}
+//   </>
+// );
+
+// 2차시도 news_data가 undefined라는 오류뜸
+// show_news = async () => {
+//   const {
+//     data: {
+//       data: { news_data }
+//     }
+//   } = await axios.get("http://10.58.4.51:8080/news/0/0");
+//   this.setState({ news_data: false });
+// };
+// componentDidMount() {
+//   this.show_news();
+// }
