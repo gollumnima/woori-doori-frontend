@@ -13,30 +13,40 @@ import "./RecipeHome.scss";
 // ];
 
 class RecipeHomeCategory extends React.Component {
-  onChangedRadio = e => {
+  onClinkHandler = e => {
     this.props.onChangeCategory(e);
   };
 
   render() {
     return (
       <div className="tag_menu1">
-        <div className="tag_menu_color"> {this.props.title}</div>
+        {/* <div className="tag_menu_color"> {this.props.title}</div> */}
         <div className="check_box_warp">
           <div className="check_box">
             {this.props.items.map((item, index) => {
               return (
-                <label key={index}>
-                  <input
-                    className="checkbox"
-                    type="radio"
-                    key={index}
-                    name={this.props.title}
-                    value={index + 1}
-                    // // checked={this.state.selectedOption}
-                    onChange={this.onChangedRadio}
-                  />
-                  {item[1]}
-                </label>
+                // <label key={index}>
+                //   <button
+                //     className="checkbox"
+                //     type="radio"
+                //     key={index}
+                //     name={this.props.title}
+                //     value={index + 1}
+                //     checked={this.state.selectedOption}
+                //     onChange={this.onChangedRadio}
+                //   />
+                //   {item[1]}
+                // </label>
+
+                <div
+                  className="RecipeButton"
+                  key={index}
+                  value={index}
+                  name={this.props.title}
+                  onClick={this.onClinkHandler}
+                >
+                  <p>{item[1]}</p>
+                </div>
               );
             })}
           </div>

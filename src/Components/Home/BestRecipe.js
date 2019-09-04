@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./BestRecipe.scss";
+import { Link } from "react-router-dom";
 import HomeRecipeItem from "./HomeRecipeItem";
 
 class BestRecipe extends Component {
@@ -7,7 +7,16 @@ class BestRecipe extends Component {
     return (
       <>
         {this.props.baseRecipeList.map(el => {
-          return <HomeRecipeItem img={el.img} desc={el.desc} name={el.name} />;
+          return (
+            <Link to={`/recipe_page/${el.id}`}>
+              <HomeRecipeItem
+                id={el.id}
+                img={el.img}
+                desc={el.desc}
+                name={el.name}
+              />
+            </Link>
+          );
         })}
       </>
     );

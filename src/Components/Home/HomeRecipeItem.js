@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./HomeRecipeItem.scss";
 
 class HomeRecipeItem extends Component {
   render() {

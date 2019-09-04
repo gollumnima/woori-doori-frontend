@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../../Pages/Menu/Menu";
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
 class Navbar extends React.Component {
   constructor() {
@@ -8,20 +9,6 @@ class Navbar extends React.Component {
       isOpen: false
     };
   }
-  // openMenu = () => {
-  //   return (
-  //     <div className="menu_container">
-  //       <ul>
-  //         <li>X</li>
-  //         <li>Home</li>
-  //         <li>About</li>
-  //         <li>Recipes</li>
-  //         <li>Food News</li>
-  //       </ul>
-  //     </div>
-  //   );
-  // };
-  // closeMenu = () => {};
   openMenu = () => {
     if (this.state.isOpen === false) {
       this.setState({
@@ -37,35 +24,23 @@ class Navbar extends React.Component {
     return (
       <div className="nav_container">
         <nav className="nav_bar">
-          <div className="menu_wrap">
+          <div className="menu_wrap_container">
             {this.state.isOpen === true ? <Menu /> : null}
-
-            <img
-              className="menu_btn"
-              src={require("../../img/menu_btn.png")}
-              alt="menu_btn"
-              onClick={this.openMenu}
-              // onClick={(this.menu_container.style.overflow = "visible")}
-              // onClick={(this.menu_container.style.left = 0 + `px`)}
-              // onClick={this.openMenu}
-              // onClick={this.openMenu}
-            />
-          </div>
-          <div className="logo_wrap">
-            <img
-              className="logo"
-              src={require("../../img/logo.png")}
-              alt="logo"
-            />
-            <h1>Wooridoori.com</h1>
-          </div>
-
-          <div className="login_wrap">
-            <img
-              className="login_btn"
-              src={require("../../img/chef.png")}
-              alt="login"
-            />
+            <div className="logo_wrap">
+              <h1>Wooridoori.com</h1>
+            </div>
+            <div className="right">
+              <div className="menu_wrap">
+                <h1 className="menu_btn" onClick={this.openMenu}>
+                  Menu
+                </h1>
+              </div>
+              <div className="login_wrap">
+                <Link to="/login">
+                  <h1>Login</h1>
+                </Link>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

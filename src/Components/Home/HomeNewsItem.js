@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class HomeNewsItem extends React.Component {
   render() {
@@ -11,7 +12,10 @@ class HomeNewsItem extends React.Component {
         </div>
 
         <div className="info_content">
+          {/* <Link to={`/recipe_page/:${this.props.id}`}> */}
+          {/* <Link to={"/recipe_page/:1"}> */}
           <img src={this.props.thumbnail} alt={this.props.title}></img>
+          {/* </Link> */}
         </div>
       </div>
     );
