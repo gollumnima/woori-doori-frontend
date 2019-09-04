@@ -15,19 +15,32 @@ class About extends React.Component {
               h1="Dr. Kim"
               span="Front-end"
               h3="Home, About, Recipe_Page, News_Home"
+              button="Contact"
             />
-            <Profile h1="Mh. Bae" span="Back-end" h3="Login Api, Signup Api" />
+            <Profile
+              h1="Mh. Bae"
+              span="Back-end"
+              h3="Login Api, Signup Api"
+              button="Contact"
+            />
             <Profile
               h1="Gy. Choi"
               span="Front-end"
               h3="Login, Recipe_Home,
               News_Page"
+              button="Contact"
             />
-            <Profile h1="Sy. Choi" span="Back-end" h3="News Api" />
+            <Profile
+              h1="Sy. Choi"
+              span="Back-end"
+              h3="News Api"
+              button="Contact"
+            />
             <Profile
               h1="Gh. Han"
               span="Full Stack"
               h3="SignUp, Routing, Recipe Api"
+              button="Contact"
             />
           </div>
           <div className="map_container">{/* <MapContainer /> */}</div>
