@@ -11,6 +11,7 @@
     height: 13vh;
     width: 100%;
     border-bottom: 0.5px solid #bdbdbd;
+    padding-top: 36px;
 
     .menu_wrap_container {
       width: 100%;
@@ -18,7 +19,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 35px;
       .logo_wrap {
         h1 {
           font-size: 35px;
