@@ -1,4 +1,5 @@
 import React from "react";
+import "./HomeNewsItem.scss";
 import { Link } from "react-router-dom";
 
 class HomeNewsItem extends React.Component {
@@ -6,7 +7,7 @@ class HomeNewsItem extends React.Component {
     return (
       <div className="info_container">
         <div className="info_title">
-          <span>{this.props.category}</span>
+          <h3>{this.props.category}</h3>
           <h1>{this.props.title}</h1>
           <h2>{this.props.summary}</h2>
         </div>

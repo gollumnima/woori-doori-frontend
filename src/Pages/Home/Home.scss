@@ -1,16 +1,15 @@
 .home_container {
-  border: 2px solid #bdbdbd;
-  font-family: "Arvo", serif;
-  .page_wrapper {
-    width: 100%;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+  .home_total_page_wrapper {
+    margin-top: 188.36px;
     .title_line {
       margin-top: 5rem;
       margin-bottom: 2%;
+
       h1 {
-        border-bottom: 0.1rem solid black;
+        border-bottom: 1px solid #bdbdbd;
+        padding-bottom: 8px;
+        font-weight: bold;
+        font-size: 20px;
       }
     }
     .recipe_tap {
@@ -19,6 +18,9 @@
         grid-template-columns: repeat(4, minmax(5rem, 1fr));
         grid-gap: 10px;
       }
+    }
+    .news_tap {
+      margin-bottom: 100px;
     }
   }
 }

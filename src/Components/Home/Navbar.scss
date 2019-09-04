@@ -1,5 +1,4 @@
 .nav_container {
-  font-family: "Arvo", serif;
   background-color: white;
   position: fixed;
   z-index: 999;
@@ -11,23 +10,24 @@
     background-color: white;
     height: 13vh;
     width: 100%;
+    border-bottom: 0.5px solid #bdbdbd;
+    padding-top: 36px;
 
     .menu_wrap_container {
       width: 100%;
       background-color: white;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      padding: 30px 0;
-
       .logo_wrap {
         h1 {
-          font-size: 50px;
+          font-size: 35px;
+          font-weight: 500;
         }
       }
       .right {
         display: flex;
-        font-size: 20px;
+        font-size: 15px;
         .menu_wrap {
           margin-right: 20px;
         }

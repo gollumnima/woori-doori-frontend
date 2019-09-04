@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./info.scss";
 import HomeNewsItem from "./HomeNewsItem";
 
 class Info extends Component {

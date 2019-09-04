@@ -24,10 +24,12 @@ class Navbar extends React.Component {
     return (
       <div className="nav_container">
         <nav className="nav_bar">
-          <div className="menu_wrap_container">
+          <div className="menu_wrap_container page_wrapper">
             {this.state.isOpen === true ? <Menu /> : null}
             <div className="logo_wrap">
-              <h1>Wooridoori.com</h1>
+              <Link to="/Home">
+                <h1>Wooridoori.com</h1>
+              </Link>
             </div>
             <div className="right">
               <div className="menu_wrap">

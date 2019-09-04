@@ -20,6 +20,9 @@ code {
   outline: none;
 }
 
-* button:focus {
-  outline: none;
+.page_wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }

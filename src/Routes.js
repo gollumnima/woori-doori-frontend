@@ -8,11 +8,13 @@ import Signup from "./Pages/Signup/Signup";
 import RecipeHome from "./Pages/Recipe/RecipeHome";
 import NewsHome from "./Pages/NewsPage/NewsHome";
 import NewsPage from "./Pages/NewsPage/NewsPage";
+import Navbar from "./Components/Home/Navbar";
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />

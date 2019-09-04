@@ -20,11 +20,8 @@ class Home extends React.Component {
     let DataC = DataNews;
 
     return (
-      <div className="home_container">
-        <>
-          <Navbar />
-        </>
-        <div className="page_wrapper">
+      <div className="home_container page_wrapper">
+        <div className="home_total_page_wrapper">
           <Rolling />
           <div className="recipe_tap">
             <div className="title_line">
