@@ -4,116 +4,52 @@
   margin-left: auto;
   margin-right: auto;
   font-family: "Noto Serif KR", serif;
-  .recipe_container {
-    display: grid;
-    grid-template-rows: 1fr 2fr;
 
+  .recipe_page_container {
+    margin-top: 140px;
     .food_name {
-      margin-top: 430px;
-      border-bottom: 5px solid black;
-      width: 60%;
-
+      width: 40%;
+      border-bottom: 4px solid black;
       h1 {
-        font-size: 60px;
-        margin-top: auto;
-        text-align: left;
+        font-weight: bold;
+        font-size: 50px;
       }
     }
-    .cooking_process_container {
-      // margin-top: 50px;
-      // display: grid;
-      // grid-template-columns: 1fr 1fr;
+    .recipe_container {
       display: grid;
-
-      .recipe_box {
+      grid-template-columns: 1fr 1fr;
+      .cooking_process {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-
-        .food_ingredients_box {
+        grid-template-rows: 1fr 2fr;
+        margin-top: 20px;
+        .ingredients_box {
           h1 {
-            margin-top: 20px;
-            font-size: 30px;
-            font-weight: 600;
+            font-weight: bold;
+            font-size: 25px;
           }
           h5 {
             margin-top: 10px;
           }
         }
-        .cooking_process {
+        .recipe_box {
           h1 {
-            font-size: 30px;
-            font-weight: 600;
+            font-weight: bold;
+            font-size: 25px;
           }
-          h3 {
-            margin-top: 10px;
+          h5 {
+            ul {
+              list-style: none;
+              li {
+                margin-top: 10px;
+              }
+            }
           }
         }
-        .recipe_img_wrapper {
-          img {
-            overflow: hidden;
-            background-position: center center;
-            background-size: cover;
-          }
+      }
+      .foodie {
+        img {
         }
       }
     }
   }
 }
-
-// .recipe_page_total_wrap {
-//   width: 100%;
-//   max-width: 1180px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   font-family: "Noto Serif KR", serif;
-
-//   .recipe_container {
-//     display: grid;
-//     grid-template-rows: 1fr 2fr;
-//     .food_name {
-//       margin-top: 245px;
-//       border-bottom: 5px solid black;
-//       width: 60%;
-
-//       h1 {
-//         font-size: 60px;
-//         margin-top: auto;
-//         text-align: left;
-//       }
-//     }
-//     .cooking_process_container {
-//       margin-top: 50px;
-//       display: grid;
-//       grid-template-columns: 1fr 1fr;
-
-//       .recipe_box {
-//         display: grid;
-//         grid-template-rows: 1fr 2fr;
-//         .food_ingredients_box {
-//           h1 {
-//             font-size: 30px;
-//             font-weight: 600;
-//           }
-//           h5 {
-//             margin-top: 10px;
-//           }
-//         }
-//         .cooking_process {
-//           h1 {
-//             font-size: 30px;
-//             font-weight: 600;
-//           }
-//           h3 {
-//             margin-top: 10px;
-//           }
-//         }
-//       }
-//       .recipe_img_wrapper {
-//         img {
-//           background-size: cover;
-//           background-position: center center;
-//         }
-//       }
-//     }
-//   }
-// }
