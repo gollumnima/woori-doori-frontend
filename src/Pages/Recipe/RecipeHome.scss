@@ -19,41 +19,15 @@ $doriColor: #fcd45c;
     // background: #7b7b7b;
     border-top: 2px solid #bdbdbd;
     border-bottom: 2px solid #bdbdbd;
-    //   p {
-    //     border-right: 2px solid #bdbdbd;
-    //     padding: 0 12px;
-    //   }
-    // }
-    // .RecipeButton:last-child {
-    //   p {
-    //     border-right: 0;
-    //   }
   }
 
   .RecipeHome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
     .tag_round {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
-      // padding-top: 15px;
-      // margin-top: 130px;
       margin-top: 100px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       grid-row-gap: 5px;
-
-      .check_box {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        // border-bottom: 2px solid #bdbdbd;
-        // border-top: 2px solid #bdbdbd;
-      }
+      width: 100%;
     }
 
     .design {

@@ -19,21 +19,16 @@ class RecipeHomeCategory extends React.Component {
 
   render() {
     return (
-      <div className="tag_menu1">
-        {/* <div className="tag_menu_color"> {this.props.title}</div> */}
-        <div className="check_box_warp">
-          <div className="check_box">
-            {/* {this.props.items.map((item, index) => {
+      <div className="check_box">
+        {/* {this.props.items.map((item, index) => {
               return ( */}
-            <div
-              className="RecipeButton"
+        <div
+          className="RecipeButton"
 
-              // category__name={this.props.category__name}
-              // onClick={this.onClinkHandler}
-            >
-              <p>{this.props.name}</p>
-            </div>
-          </div>
+          // category__name={this.props.category__name}
+          // onClick={this.onClinkHandler}
+        >
+          <p>{this.props.name}</p>
         </div>
       </div>
     );

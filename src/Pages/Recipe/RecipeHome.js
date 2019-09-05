@@ -41,19 +41,31 @@ class RecipeHome extends React.Component {
       .then(response => {
         this.setState({ category: response });
       });
+    fetch("http://10.58.6.255:8000/recipe/category", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ category: response });
+      });
     // this.setState({
     //   category: this.state.category,
     //   selectedCategory: this.state.selectedCategory
     // });
   }
-  onChangeCategory = e => {
-    let name = e.target.name;
-    let value = e.target.value;
-    this.state.selectedCategory[name] = Number(value);
-    this.setState({
-      selectedCategory: this.state.selectedCategory
-    });
-  };
+  // onChangeCategory = e => {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
+  //   this.state.selectedCategory[name] = Number(value);
+  //   this.setState({
+  //     selectedCategory: this.state.selectedCategory
+  //   });
+  // };
   render() {
     let DataA = Data;
     return (
