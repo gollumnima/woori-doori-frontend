@@ -1,8 +1,7 @@
 import React from "react";
-import "./RecipeHome.scss";
 
-class RecipeHomeCategory extends React.Component {
-  onClinkHandler = e => {
+class NewsHomeCategory extends React.Component {
+  onClickHandler = e => {
     this.props.onChangeCategory(e);
   };
 
@@ -14,11 +13,11 @@ class RecipeHomeCategory extends React.Component {
             {this.props.items.map((item, index) => {
               return (
                 <div
-                  className="RecipeButton"
+                  className="NewsButton"
                   key={index}
                   value={index}
                   name={this.props.title}
-                  onClick={this.onClinkHandler}
+                  onClick={this.onClickHandler}
                 >
                   <p>{item[1]}</p>
                 </div>
@@ -31,4 +30,4 @@ class RecipeHomeCategory extends React.Component {
   }
 }
 
-export default RecipeHomeCategory;
+export default NewsHomeCategory;

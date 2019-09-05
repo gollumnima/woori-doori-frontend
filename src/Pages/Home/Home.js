@@ -11,9 +11,18 @@ import BestRecipe from "../../Components/Home/BestRecipe";
 class Home extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      HomeNewsList: {}
+    };
   }
 
+  componentDidMount() {
+    fetch("http://10.58.4.51:8080/news/0/0")
+      .then(response => response.json())
+      .then(result => this.setState({}));
+  }
+
+  renderNewsList = () => {};
   render() {
     let DataA = Data;
     let DataB = Data2nd;

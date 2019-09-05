@@ -5,17 +5,6 @@ import Navbar from "../../Components/Home/Navbar";
 import HomeRecipeItem from "../../Components/Home/HomeRecipeItem";
 import Data from "../Home/Data";
 
-let category = [
-  {
-    title: "국가",
-    items: ["한국", "중국", "일본", "이탈리아"]
-  },
-  {
-    title: "재료",
-    items: ["돼지고기", "소고기", "샐러드", "닭고기"]
-  }
-];
-
 const CategoryData = [
   {
     title: [1, "나라별"],
