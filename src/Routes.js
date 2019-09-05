@@ -6,7 +6,6 @@ import RecipePage from "./Pages/Recipe/RecipePage";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import RecipeHome from "./Pages/Recipe/RecipeHome";
-import NewsHome from "./Pages/NewsPage/NewsHome";
 import NewsPage from "./Pages/NewsPage/NewsPage";
 import Navbar from "./Components/Home/Navbar";
 
@@ -24,7 +23,6 @@ class Routes extends React.Component {
           {/* <Route path="/recipe_page" component={RecipePage} /> */}
           <Route exact path="/news_page/:id" component={NewsPage} />
           <Route exact path="/news_page" component={NewsPage} />
-          <Route exact path="/newshome" component={NewsHome} />
           <Route exact path="/recipe_page/:id" component={RecipePage} />
           <Route exact path="/recipehome" component={RecipeHome} />
           {/* <Route exact path="/newsHome" component={NewsHome} /> */}
