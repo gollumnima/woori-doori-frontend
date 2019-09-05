@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.scss";
 import Logo from "./wooridoori.png";
+import KakaoLogin from "react-kakao-login";
 
 class Login extends React.Component {
   constructor() {
@@ -24,6 +25,13 @@ class Login extends React.Component {
     }
   };
 
+  responseKakao = res => {
+    this.setState({
+      id: res.profile.id,
+      name: res.profile.properties.nickname,
+      provider: "kakao"
+    });
+  };
   render() {
     return (
       <div className="login-wrap ">
@@ -59,6 +67,7 @@ class Login extends React.Component {
             >
               Login
             </button>
+            <KakaoLogin></KakaoLogin>
           </div>
         </div>
       </div>
