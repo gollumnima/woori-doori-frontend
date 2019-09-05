@@ -1,9 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
+// import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import HomeRecipeItem from "./HomeRecipeItem";
 
-class BestRecipe extends Component {
+// const RECIPE_END_POINT = "http://10.58.6.255:8000/recipe/recipes";
+
+class BestRecipe extends React.Component {
+  constructor() {
+    super();
+  }
+
+  // onChangeCategory = e => {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
+  //   this.state.selectedCategory[name] = Number(value);
+  //   this.setState({
+  //     selectedCategory: this.state.selectedCategory
+  //   });
+  // };
+
   render() {
+    // const { homeRecipe1 } = this.state;
     return (
       <>
         {this.props.recipe.map((el, index) => {
@@ -14,6 +31,7 @@ class BestRecipe extends Component {
                 title={el.title}
                 img={el.image}
                 desc={el.categoryItem__name}
+                // name={el.name}
               />
             </Link>
           );

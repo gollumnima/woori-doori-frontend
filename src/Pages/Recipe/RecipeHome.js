@@ -3,63 +3,69 @@ import "./RecipeHome.scss";
 import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
 import Navbar from "../../Components/Home/Navbar";
 import HomeRecipeItem from "../../Components/Home/HomeRecipeItem";
-import Data from "../Home/Data";
-
-const CategoryData = [
-  {
-    title: [1, "나라별"],
-    items: [[1, "한식"], [2, "중식"], [3, "양식"], [4, "일식"]]
-  },
-  {
-    title: [2, "식자재별"],
-    items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
-  },
-  {
-    title: [2, "식자재별"],
-    items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
-  },
-  {
-    title: [2, "식자재별"],
-    items: [[1, "돼지고기"], [2, "닭고기"], [3, "소고기"], [4, "채소"]]
-  }
-];
 
 class RecipeHome extends React.Component {
   constructor() {
     super();
     this.state = {
       category: [],
-      selectedCategory: {},
-      recipeList: []
+      recipeList: [],
+      active_category: 1
     };
   }
-
   componentDidMount() {
     // fetch (카타고리를 읽어오기)
-    this.state.category = CategoryData;
 
-    for (let index = 0; index < CategoryData.length; index++) {
-      this.state.selectedCategory[CategoryData[index].title[1]] = -1;
-    }
+    // for (let index = 0; index < CategoryData.length; index++) {
+    //   this.state.selectedCategory[CategoryData[index].title[1]] = -1;
+    // }
+    fetch("http://10.58.6.255:8000/recipe/category", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ category: response });
+      });
 
-    this.setState({
-      category: this.state.category,
-      selectedCategory: this.state.selectedCategory
-    });
+    this.requestRecipeList(this.state.active_category);
+  }
+
+  requestRecipeList(categoryItem_number) {
+    fetch("http://10.58.6.255:8000/recipe/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        command: 2,
+        recipe_no: 1,
+        categoryItem_no: categoryItem_number,
+        start_no: 0,
+        recipe_cnt: 3
+      })
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({
+          recipeList: response
+        });
+        // console.log(response);
+      });
   }
 
   onChangeCategory = e => {
-    let name = e.target.name;
-    let value = e.target.value;
-
-    this.state.selectedCategory[name] = Number(value);
-    this.setState({
-      selectedCategory: this.state.selectedCategory
-    });
+    let categoryItem_number = Number(e.currentTarget.id);
+    this.requestRecipeList(categoryItem_number);
   };
 
   render() {
-    let DataA = Data;
     return (
       <>
         <div className="RecipeWrap">
@@ -71,59 +77,26 @@ class RecipeHome extends React.Component {
                   return (
                     <RecipeHomeCategory
                       key={key}
-                      title={el.title[1]}
-                      items={el.items}
+                      name={el.name}
+                      value={el.item_no}
                       onChangeCategory={this.onChangeCategory}
                     />
                   );
                 })}
               </div>
               <div className="design">
-                {/* {Data.map(el,items)=>{return(<HomeRecipeItem id={el.id/>)}
-                 */}
-                <HomeRecipeItem
-                  id="3"
-                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
-                  desc="test"
-                  name="test"
-                />
-                <HomeRecipeItem
-                  id="3"
-                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
-                  desc="test"
-                  name="test"
-                />
-                <HomeRecipeItem
-                  id="3"
-                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
-                  desc="test"
-                  name="test"
-                />
-                <HomeRecipeItem
-                  id="3"
-                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
-                  desc="test"
-                  name="test"
-                />{" "}
-                <HomeRecipeItem
-                  id="3"
-                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
-                  desc="test"
-                  name="test"
-                />{" "}
-                <HomeRecipeItem
-                  id="3"
-                  img="https://cdn.pixabay.com/photo/2019/03/13/21/16/cookies-4053771_960_720.jpg"
-                  desc="test"
-                  name="test"
-                />
+                {this.state.recipeList.map((item, index) => {
+                  return (
+                    <HomeRecipeItem
+                      key={index}
+                      img={item.image}
+                      desc={item.categoryItem__name}
+                      title={item.title}
+                      name={item.name}
+                    />
+                  );
+                })}
               </div>
-              {/* <div className="title_line">
-                  <h1>Best Recipes</h1>
-                </div>
-                <div className="recipe_tap"> */}
-              {/* <BestRecipe baseRecipeList={DataA} /> */}
-              {/* </div> */}
             </div>
           </div>
         </div>
@@ -131,73 +104,4 @@ class RecipeHome extends React.Component {
     );
   }
 }
-
 export default RecipeHome;
-
-// import React from "react";
-// import "./RecipeHome.scss";
-// import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
-// import Navbar from "../../Components/Home/Navbar";
-// import BestRecipe from "../../Components/Home/BestRecipe";
-// import Data from "../Home/Data";
-// let category = [
-//   {
-//     title: "국가",
-//     items: ["한국", "중국", "일본", "이탈리아"]
-//   },
-//   {
-//     title: "재료",
-//     items: ["돼지고기", "소고기", "샐러드", "닭고기"]
-//   }
-// ];
-
-// class RecipeHome extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {};
-//   }
-//   onChangedRadio = () => {
-//     this.setState({});
-//   };
-//   render() {
-//     let DataA = Data;
-//     return (
-//       <>
-//         <Navbar />
-
-//         <div className="RecipeHome-tag">
-//           <div className="RecipeHome">
-//             <div className="tag_round">
-//               <div className="tag">
-//                 {category.map((el, key) => {
-//                   return (
-//                     <RecipeHomeCategory
-//                       key={key}
-//                       title={el.title}
-//                       items={el.items}
-//                     />
-//                   );
-//                 })}
-//               </div>
-//               <div className="btn_wrap">
-//                 <button onClick={this.onChangedRadio} className="btn">
-//                   확인
-//                 </button>
-//               </div>
-//             </div>
-//             <div className="design">
-//               <div className="title_line">
-//                 <h1>Best Recipes</h1>
-//               </div>
-//               <div className="recipe_tap">
-//                 <BestRecipe baseRecipeList={DataA} />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </>
-//     );
-//   }
-// }
-
-// export default RecipeHome;
