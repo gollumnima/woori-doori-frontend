@@ -1,8 +1,9 @@
 import React from "react";
-import "./RecipeHome.scss";
+import { Link } from "react-router-dom";
 import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
 import Navbar from "../../Components/Home/Navbar";
 import HomeRecipeItem from "../../Components/Home/HomeRecipeItem";
+import "./RecipeHome.scss";
 
 class RecipeHome extends React.Component {
   constructor() {
@@ -59,7 +60,7 @@ class RecipeHome extends React.Component {
         // console.log(response);
       });
   }
-
+  x;
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
     this.requestRecipeList(categoryItem_number);
@@ -87,17 +88,20 @@ class RecipeHome extends React.Component {
               <div className="design">
                 {this.state.recipeList.map((item, index) => {
                   return (
-                    <HomeRecipeItem
-                      key={index}
-                      img={item.image}
-                      desc={item.categoryItem__name}
-                      title={item.title}
-                      name={item.name}
-                    />
+                    <Link to={`/recipe_page/${item.recipe_no}`}>
+                      <HomeRecipeItem
+                        key={index}
+                        img={item.image}
+                        desc={item.categoryItem__name}
+                        title={item.title}
+                        name={item.name}
+                      />
+                    </Link>
                   );
                 })}
               </div>
             </div>
+            5
           </div>
         </div>
       </>
