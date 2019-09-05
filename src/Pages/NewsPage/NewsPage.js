@@ -1,67 +1,60 @@
 import React from "react";
 import "./NewsPage.scss";
 import Comment from "../../Components/Home/Comment";
-import Navbar from "../../Components/Home/Navbar";
 // import axios from "axios";
 
 class NewsPage extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      NewsList: []
+    };
   }
 
   componentDidMount() {
     fetch("http://10.58.4.51:8080/news/0/0")
       .then(response => response.json())
-      .then(result =>
-        // this.setState({
-        //   news_data: result[0],
-        //   title: result[0].title,
-        //   tag: result[0].tag,
-        //   content: result[0].content,
-        //   image_url: result[0].image_url
-        // })
+      .then(result => {
         this.setState({
-          result
-        })
-      );
+          NewsList: result
+        });
+      });
   }
-  renderNews = () => {
-    this.state.result.map(el => {
-      return <div title={el.title} />;
-    });
-  };
 
   render() {
+    const { NewsList } = this.state;
+    console.log(this.state.NewsList, "sddsfaasddsdfz");
     return (
       <>
-        {this.state.result ? this.renderNews() : null}
-
-        <Navbar />
-        <div className="recipe_page_total_wrap">
-          <div className="recipe_page_container">
-            <div className="food_name">
-              <h1>{this.state.title}</h1>
-            </div>
-            <div className="recipe_container">
-              <div className="cooking_process">
-                <div className="ingredients_box">
-                  <h1 className="title_line">{this.state.tag}</h1>
-                  <h5> </h5>
+        {/* {this.state.result ? this.renderNews() : null} */}
+        {NewsList.map(el => {
+          return (
+            <div className="news_page_total_wrap">
+              <div className="news_page_container">
+                <div className="news_name">
+                  <h1>{el.title}</h1>
                 </div>
-                <div className="recipe_box">
-                  <ul>
-                    <li>{this.state.content}</li>
-                  </ul>
+                <div className="news_container">
+                  <div className="cooking_process">
+                    <div className="ingredients_box">
+                      <h1 className="title_line">{el.tag}</h1>
+                      <h5> </h5>
+                    </div>
+                    <div className="news_box">
+                      <ul>
+                        <li>{el.content}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="newsie">
+                    <img src={el.image_url} alt="hamburger"></img>
+                  </div>
                 </div>
               </div>
-              <div className="foodie">
-                <img src={this.state.image_url} alt="hamburger"></img>
-              </div>
+              <Comment />
             </div>
-          </div>
-          <Comment />
-        </div>
+          );
+        })}
       </>
     );
   }
@@ -90,18 +83,18 @@ export default NewsPage;
 //   return (
 //     <>
 //       <Navbar />
-//       <div className="recipe_page_total_wrap">
-//         <div className="recipe_page_container">
+//       <div className="news_page_total_wrap">
+//         <div className="news_page_container">
 //           <div className="food_name">
 //             <h1>{this.state.title}</h1>
 //           </div>
-//           <div className="recipe_container">
+//           <div className="news_container">
 //             <div className="cooking_process">
 //               <div className="ingredients_box">
 //                 <h1 className="title_line">{this.state.tag}</h1>
 //                 <h5> </h5>
 //               </div>
-//               <div className="recipe_box">
+//               <div className="news_box">
 //                 <h1 className="title_line">빈값</h1>
 //                 <h5>
 //                   <ul>
@@ -131,18 +124,18 @@ export default NewsPage;
 //       return (
 //         <>
 //           <Navbar />
-//           <div className="recipe_page_total_wrap">
-//             <div className="recipe_page_container">
+//           <div className="news_page_total_wrap">
+//             <div className="news_page_container">
 //               <div className="food_name">
 //                 <h1>{el.title}</h1>
 //               </div>
-//               <div className="recipe_container">
+//               <div className="news_container">
 //                 <div className="cooking_process">
 //                   <div className="ingredients_box">
 //                     <h1 className="title_line">{el.tag}</h1>
 //                     <h5> </h5>
 //                   </div>
-//                   <div className="recipe_box">
+//                   <div className="news_box">
 //                     <h1 className="title_line">빈값</h1>
 //                     <h5>
 //                       <ul>

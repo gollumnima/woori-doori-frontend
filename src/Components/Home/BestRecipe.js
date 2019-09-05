@@ -6,14 +6,14 @@ class BestRecipe extends Component {
   render() {
     return (
       <>
-        {this.props.baseRecipeList.map(el => {
+        {this.props.recipe.map((el, index) => {
           return (
-            <Link to={`/recipe_page/${el.id}`}>
+            <Link to={`/recipe_page/${el.recipe_no}`}>
               <HomeRecipeItem
-                id={el.id}
-                img={el.img}
-                desc={el.desc}
-                name={el.name}
+                key={index}
+                title={el.title}
+                img={el.image}
+                desc={el.categoryItem__name}
               />
             </Link>
           );

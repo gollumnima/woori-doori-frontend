@@ -10,24 +10,25 @@ class Info extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("http://10.58.4.51:8080/main_news")
-      .then(response => response.json())
-      .then(result => {
-        this.setState({
-          HomeNewsList: result
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch("http://10.58.4.51:8080/main_news")
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       this.setState({
+  //         HomeNewsList: result
+  //       });
+  //     });
+  // }
   render() {
-    const { HomeNewsList } = this.state;
-    console.log(this.state.HomeNewsList, "ssssssddddd");
+    // const { HomeNewsList } = this.state;
+    // console.log(this.state.HomeNewsList, "ssssssddddd");
     return (
       <>
-        {HomeNewsList.map(el => {
+        {this.props.newslist.map((el, index) => {
           return (
             <Link to={`/news_page/${el.id}`}>
               <HomeNewsItem
+                key={index}
                 category={el.tag}
                 title={el.title}
                 summary={el.content}

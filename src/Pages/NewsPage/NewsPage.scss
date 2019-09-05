@@ -1,12 +1,12 @@
-.recipe_page_total_wrap {
+.news_page_total_wrap {
   width: 100%;
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 100px;
-  .recipe_page_container {
+  .news_page_container {
     margin-top: 140px;
-    .food_name {
+    .news_name {
       width: 40%;
       border-bottom: 4px solid black;
       h1 {
@@ -14,7 +14,7 @@
         font-size: 50px;
       }
     }
-    .recipe_container {
+    .news_container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       .cooking_process {
@@ -30,7 +30,7 @@
             margin-top: 10px;
           }
         }
-        .recipe_box {
+        .news_box {
           h1 {
             font-weight: bold;
             font-size: 25px;
@@ -45,7 +45,7 @@
           }
         }
       }
-      .foodie {
+      .newsie {
         img {
         }
       }
