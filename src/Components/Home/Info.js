@@ -5,9 +5,7 @@ import HomeNewsItem from "./HomeNewsItem";
 class Info extends Component {
   constructor() {
     super();
-    this.state = {
-      HomeNewsList: []
-    };
+    this.state = {};
   }
 
   // componentDidMount() {

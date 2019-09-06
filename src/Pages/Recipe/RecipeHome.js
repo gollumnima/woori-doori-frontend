@@ -14,6 +14,7 @@ class RecipeHome extends React.Component {
       active_category: 1
     };
   }
+
   componentDidMount() {
     // fetch (카타고리를 읽어오기)
 
@@ -47,7 +48,7 @@ class RecipeHome extends React.Component {
         recipe_no: 1,
         categoryItem_no: categoryItem_number,
         start_no: 0,
-        recipe_cnt: 3
+        recipe_cnt: 8
       })
     })
       .then(response => {
@@ -60,13 +61,14 @@ class RecipeHome extends React.Component {
         // console.log(response);
       });
   }
-  x;
+
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
     this.requestRecipeList(categoryItem_number);
   };
-
   render() {
+    console.log(this.categoryItem_number, "ddd");
+
     return (
       <>
         <div className="RecipeWrap">
@@ -101,7 +103,6 @@ class RecipeHome extends React.Component {
                 })}
               </div>
             </div>
-            5
           </div>
         </div>
       </>

@@ -16,7 +16,6 @@ class RecipePage extends React.Component {
   }
 
   componentDidMount() {
-    console.log("componetDidMount BestRecipe");
     fetch("http://10.58.6.255:8000/recipe/recipes", {
       method: "POST",
       headers: {
@@ -66,12 +65,10 @@ class RecipePage extends React.Component {
                 <img src={recipeDetail.image} alt=""></img>
               </div>
             </div>
-            <div className="foodie">
-              <img src={recipeDetail.image} alt=""></img>
-            </div>
           </div>
           {/* <Comment /> */}
         </div>
+        {/* <Comment /> */}
       </>
     );
   }

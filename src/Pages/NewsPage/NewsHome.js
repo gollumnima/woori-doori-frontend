@@ -6,8 +6,8 @@ class NewsHome extends React.Component {
     super();
     this.state = {
       category: [],
-      selectedCategory: {},
-      NewsList: []
+      newsList: [],
+      active_category: 1
     };
   }
 
@@ -21,14 +21,43 @@ class NewsHome extends React.Component {
   //     selectedCategory: this.state.selectedCategory
   //   });
   // }
+  componentDidMount() {
+    fetch("http://10.58.4.51:8080/news/1/0", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({ category: response });
+      });
 
-  // state안에 카테고리값과 뉴스리스트 빈 스트링으로 정의
-  // newshomecategory 컴포넌트(선택, 클릭하는 부분) 태그 쓰기
-  // fetch로 카테고리 데이터 불러오기(동적)
-  // onclick 되었을 때, 선택된 뉴스리스트 뜨게 하기
-  // 선택된 뉴스리스트만 뜨는 함수 만들기
-  // 그 함수 실행시키기
+    this.requestNewsList(this.state.active_category);
+  }
 
+  requestNewsList(categoryItem_number) {
+    fetch("http://10.58.4.51:8080/news/1/0", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        this.setState({
+          newsList: response
+        });
+      });
+  }
+  onChangeCategory = e => {
+    let categoryItem_number = Number(e.currentTarget.id);
+    this.requestNewsList(categoryItem_number);
+  };
   render() {
     return (
       <>
@@ -40,8 +69,9 @@ class NewsHome extends React.Component {
                   return (
                     <NewsHomeCategory
                       key={key}
-                      title={el.title[1]}
+                      title={el.title}
                       items={el.items}
+                      value={el.item_no}
                       onChangeCategory={this.onChangeCategory}
                     />
                   );

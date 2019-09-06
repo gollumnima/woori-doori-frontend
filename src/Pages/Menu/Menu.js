@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.scss";
-import { highlightTrailingWhitespace } from "jest-matcher-utils";
+// import { highlightTrailingWhitespace } from "jest-matcher-utils";
 
 class Menu extends React.Component {
   onClickHandle = e => {

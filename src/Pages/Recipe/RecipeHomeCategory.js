@@ -2,6 +2,13 @@ import React from "react";
 import "./RecipeHome.scss";
 
 class RecipeHomeCategory extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      color: "",
+      borderBottom: ""
+    };
+  }
   onClinkHandler = e => {
     this.props.onChangeCategory(e);
   };
