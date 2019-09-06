@@ -21,7 +21,7 @@ const ALARM_MESSAGE = {
   WRONG_PW: "Password가 다릅니다."
 };
 
-const SIGN_UP_END_POINT = "http://10.58.4.19:8000/users/signup";
+const SIGN_UP_END_POINT = "http://10.58.1.192:8050/users/signup";
 
 /*************************************************************************
  * SIGNUP CLASS
@@ -40,6 +40,9 @@ class Signup extends React.Component {
       RePassword: ""
       // Profile: ""
     };
+
+    // 내부변수 선언
+    this.isThereMessage = false;
 
     // 생성자 호출 상태 확인
     console.log("constructor");
@@ -88,11 +91,19 @@ class Signup extends React.Component {
       })
         .then(response => {
           // console.log("1: ", response);
-          return response.json();
+          if (response.status !== 200) {
+            this.isThereMessage = true;
+            return response.json();
+          } else {
+            this.isThereMessage = false;
+            alert("정상적으로 회원가입이 처리되었습니다.");
+          }
         })
         .then(response => {
           // console.log("2: ", response.message);
-          alert(response.message);
+          if (this.isThereMessage === true) {
+            alert(`회원가입 중 에러가 발생하였습니다. [${response.message}]`);
+          }
         });
     }
   };
