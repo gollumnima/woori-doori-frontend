@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.scss";
+import { highlightTrailingWhitespace } from "jest-matcher-utils";
 
 class Menu extends React.Component {
   onClickHandle = e => {
@@ -15,10 +16,10 @@ class Menu extends React.Component {
       <div className="menu_container">
         <div className="list_wrap">
           <ul>
-            <Link to="/Home" onClick={this.onClickHandle}>
+            <Link to="/home" onClick={this.onClickHandle}>
               <li>Home</li>
             </Link>
-            <Link to="/About" onClick={this.onClickHandle}>
+            <Link to="/about" onClick={this.onClickHandle}>
               <li>About</li>
             </Link>
             <Link to="/recipeHome" onClick={this.onClickHandle}>

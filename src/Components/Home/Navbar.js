@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "../../Pages/Menu/Menu";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
+
 class Navbar extends React.Component {
   constructor() {
     super();
@@ -15,6 +16,10 @@ class Navbar extends React.Component {
     } else {
       this.state.isOpen = !this.state.isOpen;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a87a340cbe4949bdb803f73b265b63d6949c6a5
     this.setState({
       isOpen: this.state.isOpen
     });
@@ -28,6 +33,10 @@ class Navbar extends React.Component {
             {this.state.isOpen === true ? (
               <Menu onClickHandle={this.openMenu} />
             ) : null}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a87a340cbe4949bdb803f73b265b63d6949c6a5
             <div className="logo_wrap">
               <Link to="/Home" name="menu_off" onClick={this.openMenu}>
                 <h1>Wooridoori.com</h1>

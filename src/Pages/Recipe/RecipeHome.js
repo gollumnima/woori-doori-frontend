@@ -1,5 +1,4 @@
 import React from "react";
-import "./RecipeHome.scss";
 import { Link } from "react-router-dom";
 import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
 import Navbar from "../../Components/Home/Navbar";
@@ -64,6 +63,10 @@ class RecipeHome extends React.Component {
         // console.log(response);
       });
   }
+<<<<<<< HEAD
+=======
+  x;
+>>>>>>> 8a87a340cbe4949bdb803f73b265b63d6949c6a5
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
     this.requestRecipeList(categoryItem_number);
@@ -104,6 +107,7 @@ class RecipeHome extends React.Component {
                 })}
               </div>
             </div>
+            5
           </div>
         </div>
       </>
