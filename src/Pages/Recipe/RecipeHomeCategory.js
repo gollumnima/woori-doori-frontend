@@ -5,30 +5,19 @@ class RecipeHomeCategory extends React.Component {
   constructor() {
     super();
     this.state = {
-      borderBottom: "",
-      color: ""
+      color: "",
+      borderBottom: ""
     };
   }
   onClinkHandler = e => {
     this.props.onChangeCategory(e);
-    this.setState({
-      borderBottom: "3px solid orange",
-      color: "orange"
-    });
   };
 
   render() {
     return (
       <div className="check_box">
-        <div
-          className="RecipeButton"
-          style={{ borderBottom: this.state.borderBottom }}
-        >
-          <p
-            id={this.props.value}
-            onClick={this.onClinkHandler}
-            style={{ color: this.state.color }}
-          >
+        <div className="RecipeButton">
+          <p id={this.props.value} onClick={this.onClinkHandler}>
             {this.props.name}
           </p>
         </div>

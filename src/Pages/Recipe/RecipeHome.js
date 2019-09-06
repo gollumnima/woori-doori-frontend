@@ -11,9 +11,7 @@ class RecipeHome extends React.Component {
     this.state = {
       category: [],
       recipeList: [],
-      active_category: 1,
-      color: "",
-      backgroundColor: ""
+      active_category: 1
     };
   }
 
@@ -50,7 +48,7 @@ class RecipeHome extends React.Component {
         recipe_no: 1,
         categoryItem_no: categoryItem_number,
         start_no: 0,
-        recipe_cnt: 3
+        recipe_cnt: 8
       })
     })
       .then(response => {
@@ -63,16 +61,14 @@ class RecipeHome extends React.Component {
         // console.log(response);
       });
   }
-<<<<<<< HEAD
-=======
-  x;
->>>>>>> 8a87a340cbe4949bdb803f73b265b63d6949c6a5
+
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
     this.requestRecipeList(categoryItem_number);
-    this.setState({});
   };
   render() {
+    console.log(this.categoryItem_number, "ddd");
+
     return (
       <>
         <div className="RecipeWrap">
@@ -107,7 +103,6 @@ class RecipeHome extends React.Component {
                 })}
               </div>
             </div>
-            5
           </div>
         </div>
       </>
