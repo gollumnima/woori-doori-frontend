@@ -12,7 +12,9 @@ class RecipeHome extends React.Component {
     this.state = {
       category: [],
       recipeList: [],
-      active_category: 1
+      active_category: 1,
+      color: "",
+      backgroundColor: ""
     };
   }
 
@@ -65,6 +67,7 @@ class RecipeHome extends React.Component {
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
     this.requestRecipeList(categoryItem_number);
+    this.setState({});
   };
   render() {
     return (
