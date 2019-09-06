@@ -2,7 +2,6 @@ import React from "react";
 import Menu from "../../Pages/Menu/Menu";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-
 class Navbar extends React.Component {
   constructor() {
     super();
