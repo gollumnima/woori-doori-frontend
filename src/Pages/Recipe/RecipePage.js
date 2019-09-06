@@ -1,7 +1,5 @@
 import React from "react";
 import "./RecipePage.scss";
-// import Data from "../../Pages/Home/Data";
-import Comment from "../../Components/Home/Comment";
 
 class RecipePage extends React.Component {
   constructor(props) {
@@ -18,12 +16,6 @@ class RecipePage extends React.Component {
   }
 
   componentDidMount() {
-    // fetch (카타고리를 읽어오기)
-    // this.state.category = CategoryData;
-    // for (let index = 0; index < CategoryData.length; index++) {
-    //   this.state.selectedCategory[CategoryData[index].title[1]] = -1;
-    // }
-    // API 호출
     console.log("componetDidMount BestRecipe");
     fetch("http://10.58.6.255:8000/recipe/recipes", {
       method: "POST",
@@ -48,21 +40,16 @@ class RecipePage extends React.Component {
           recipeDetail: response
         });
 
-        console.log(response);
+        // console.log(response);
       });
-    // this.setState({
-    //   category: this.state.category,
-    //   selectedCategory: this.state.selectedCategory
-    // });
   }
 
   render() {
     let { recipeDetail } = this.state;
-    console.log(recipeDetail.method);
+    // console.log(recipeDetail.method);
 
     return (
       <>
-        <Navbar />
         <div className="recipe_page_total_wrap">
           <div className="recipe_page_container">
             <div className="food_name">
@@ -83,9 +70,9 @@ class RecipePage extends React.Component {
               <img src={recipeDetail.image} alt=""></img>
             </div>
           </div>
+          {/* <Comment /> */}
         </div>
-        <Comment />
-      </div>
+      </>
     );
   }
 }

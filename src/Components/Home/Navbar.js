@@ -9,29 +9,30 @@ class Navbar extends React.Component {
       isOpen: false
     };
   }
-  openMenu = () => {
-    if (this.state.isOpen === false) {
-      this.setState({
-        isOpen: true
-      });
+  openMenu = e => {
+    if (e.currentTaget.name === "menu_off") {
+      this.state.isOpen = 0;
     } else {
-      this.setState({
-        isOpen: false
-      });
+      this.state.isOpen = !this.state.isOpen;
     }
+    this.setState({
+      isOpen: this.state.isOpen
+    });
   };
+
   render() {
     return (
       <div className="nav_container">
         <nav className="nav_bar">
           <div className="menu_wrap_container page_wrapper">
-            {this.state.isOpen === true ? <Menu /> : null}
-            <Link to="/Home">
-              <div className="logo_wrap">
-                {/* <img src={require("../../img/logo.png")} alt="logo"></img> */}
+            {this.state.isOpen === true ? (
+              <Menu onClickHandle={this.openMenu} />
+            ) : null}
+            <div className="logo_wrap">
+              <Link to="/Home" name="menu_off" onClick={this.openMenu}>
                 <h1>Wooridoori.com</h1>
-              </div>
-            </Link>
+              </Link>
+            </div>
             <div className="right">
               <div className="menu_wrap">
                 <h1 className="menu_btn" onClick={this.openMenu}>
@@ -39,7 +40,7 @@ class Navbar extends React.Component {
                 </h1>
               </div>
               <div className="login_wrap">
-                <Link to="/login">
+                <Link to="/login" name="menu_off" onClick={this.openMenu}>
                   <h1>Login</h1>
                 </Link>
               </div>
