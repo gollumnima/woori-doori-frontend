@@ -66,6 +66,9 @@ class RecipePage extends React.Component {
                 <img src={recipeDetail.image} alt=""></img>
               </div>
             </div>
+            <div className="foodie">
+              <img src={recipeDetail.image} alt=""></img>
+            </div>
           </div>
           {/* <Comment /> */}
         </div>

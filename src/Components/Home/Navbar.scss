@@ -20,6 +20,12 @@
       justify-content: space-between;
       align-items: center;
       .logo_wrap {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 80px;
+        }
         h1 {
           font-size: 35px;
           font-weight: 500;
