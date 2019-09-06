@@ -35,7 +35,8 @@ $white: white;
     align-items: center;
     width: 70%;
     color: $white;
-    font-size: 50px;
+    font-size: 30px;
+    margin-top: 90px;
   }
   .login-img {
     margin-top: 25%;
@@ -63,6 +64,7 @@ $white: white;
   .login-btn {
     border: 1px solid $doriColor;
     width: 40%;
+    margin-bottom: 20px;
 
     border-radius: 15px;
     font-size: 30px;
@@ -73,7 +75,7 @@ $white: white;
   .login-btnChange {
     border: 1px solid skyblue;
     width: 40%;
-
+    margin-bottom: 20px;
     border-radius: 15px;
     font-size: 30px;
     background: skyblue;
@@ -90,35 +92,49 @@ $white: white;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1000px) {
   .login-wrap {
-    background-color: white;
-    width: 66%;
-    page {
-      width: 320px;
-      height: 568px;
-
+    background-color: $doriColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100vh;
+    .login-boxText {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      width: 70%;
+      color: $white;
+      font-size: 20px;
+      margin-top: 50px;
     }
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 690px) {
   .login-wrap {
     background-color: white;
-    width: 66%;
-    page {
-      width: 360px;
-      height: 568px;
-
+    display: block;
+    height: 100vh;
+    .login-page-box {
+      width: 100%;
+      background-color: $white;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+    }
+    .login-boxText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      color: $white;
+      font-size: 20px;
+      margin-top: 50px;
     }
   }
 }
-@media (max-height: 320 px) {
+@media (max-width: 360 px) {
   .login-wrap {
     background-color: white;
     width: 66%;
@@ -126,13 +142,6 @@ $white: white;
       display: flex;
       flex-direction: column;
       align-items: center;
-      .login-img {
-        margin-top: 20px;
-        margin-bottom: 40px;
-      }
-      .login-btn {
-        margin-top: -5px;
-      }
     }
   }
 }
