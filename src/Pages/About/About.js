@@ -12,32 +12,32 @@ class About extends React.Component {
           <h1 className="about_title">Meet Our Team Members!</h1>
           <div className="profile_box">
             <Profile
-              h1="Dr. Kim"
+              h1="김두리"
               span="Front-end"
               h3="Home, About, Recipe_Page, News_Home"
               button="Contact"
             />
             <Profile
-              h1="Mh. Bae"
+              h1="배민혁"
               span="Back-end"
               h3="Login Api, Signup Api"
               button="Contact"
             />
             <Profile
-              h1="Gy. Choi"
+              h1="최경용"
               span="Front-end"
               h3="Login, Recipe_Home,
               News_Page"
               button="Contact"
             />
             <Profile
-              h1="Sy. Choi"
+              h1="최승윤"
               span="Back-end"
               h3="News Api"
               button="Contact"
             />
             <Profile
-              h1="Gh. Han"
+              h1="한광훈"
               span="Full Stack"
               h3="SignUp, Routing, Recipe Api"
               button="Contact"

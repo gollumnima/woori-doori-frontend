@@ -16,10 +16,6 @@ class RecipeHome extends React.Component {
     };
   }
 
-  onChangeCategory = e => {
-    let categoryItem_number = Number(e.currentTarget.id);
-    this.requestRecipeList(categoryItem_number);
-  };
   componentDidMount() {
     // fetch (카타고리를 읽어오기)
 

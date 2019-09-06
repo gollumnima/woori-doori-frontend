@@ -58,7 +58,7 @@ class RecipePage extends React.Component {
 
   render() {
     let { recipeDetail } = this.state;
-    console.log(recipeDetail.method);
+    // console.log(recipeDetail.method);
 
     return (
       <>
