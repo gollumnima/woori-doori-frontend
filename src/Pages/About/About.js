@@ -12,18 +12,21 @@ class About extends React.Component {
           <h1 className="about_title">Meet Our Team Members!</h1>
           <div className="profile_box">
             <Profile
+              img="https://gollumnima.github.io/photo.jpg"
               h1="김두리"
               span="Front-end"
-              h3="Home, About, Recipe_Page, News_Home"
+              h3="Home, About, Recipe_Page"
               button="Contact"
             />
             <Profile
+              img="https://files.slack.com/files-pri/TH0U6FBTN-FN45DGQGG/20190907_142520.jpg"
               h1="배민혁"
               span="Back-end"
               h3="Login Api, Signup Api"
               button="Contact"
             />
             <Profile
+              img="https://files.slack.com/files-pri/TH0U6FBTN-FN45WQ537/image_from_ios.jpg"
               h1="최경용"
               span="Front-end"
               h3="Login, Recipe_Home,
@@ -44,10 +47,10 @@ class About extends React.Component {
             />
           </div>
           <div className="map_container">{/* <MapContainer /> */}</div>
-          <Link to="Home">
+          {/* <Link to="Home">
             <button>Home</button>
-          </Link>
-          <footer>
+          </Link> */}
+          {/* <footer>
             <ul>
               <li>주식회사 : 우리두리닷컴</li>
               <li>대표자명 : 김예리</li>
@@ -55,7 +58,7 @@ class About extends React.Component {
               <li>사업장 주소 : 서울시 강남구 테헤란로 427, Graceful Rain</li>
               <li></li>
             </ul>
-          </footer>
+          </footer> */}
         </div>
       </>
     );

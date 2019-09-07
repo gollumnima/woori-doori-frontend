@@ -1,23 +1,25 @@
 .about_container {
   .about_title {
+    margin-top: 160px;
+    margin-bottom: 50px;
     color: #fcd45c;
-    font-size: 5rem;
+    font-size: 50px;
     text-align: center;
   }
   .profile_box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
   }
-  button {
-    border-radius: 2%;
-    border-style: none;
-    background-color: #fcd45c;
-    color: white;
-    font-size: 25px;
-    margin-top: 3%;
-    margin-left: 50%;
-    margin-bottom: 8%;
-  }
+  // button {
+  //   border-radius: 2%;
+  //   border-style: none;
+  //   background-color: #fcd45c;
+  //   color: white;
+  //   font-size: 25px;
+  //   margin-top: 3%;
+  //   margin-left: 50%;
+  //   margin-bottom: 8%;
+  // }
   footer {
     background-color: #b6b5b5bb;
     ul {
@@ -26,4 +28,10 @@
       }
     }
   }
+}
+
+.profile_box::after {
+  content: "";
+  clear: both;
+  display: table;
 }
