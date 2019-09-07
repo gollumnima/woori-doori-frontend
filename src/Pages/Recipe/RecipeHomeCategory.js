@@ -13,16 +13,8 @@ class RecipeHomeCategory extends React.Component {
   render() {
     return (
       <div className="check_box">
-        <div
-          className="RecipeButton"
-          // onClick={this.onClinkHandler}
-          style={{ borderBottom: this.state.borderBottom }}
-        >
-          <p
-            id={this.props.value}
-            onClick={this.onClinkHandler}
-            style={{ color: this.state.color }}
-          >
+        <div className="RecipeButton">
+          <p id={this.props.value} onClick={this.onClinkHandler}>
             {this.props.name}
           </p>
         </div>

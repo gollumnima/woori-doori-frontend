@@ -11,18 +11,11 @@ class RecipeHome extends React.Component {
     this.state = {
       category: [],
       recipeList: [],
-      active_category: 1,
-      color: "",
-      borderBottom: ""
+      active_category: 1
     };
   }
 
   componentDidMount() {
-    // fetch (카타고리를 읽어오기)
-
-    // for (let index = 0; index < CategoryData.length; index++) {
-    //   this.state.selectedCategory[CategoryData[index].title[1]] = -1;
-    // }
     fetch("http://10.58.6.255:8000/recipe/category", {
       method: "GET",
       headers: {
@@ -33,51 +26,39 @@ class RecipeHome extends React.Component {
         return response.json();
       })
       .then(response => {
-        this.setState({ category: response });
+        this.setState({ category: response.result });
       });
-
     this.requestRecipeList(this.state.active_category);
   }
 
   requestRecipeList(categoryItem_number) {
-    fetch("http://10.58.6.255:8000/recipe/recipes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        command: 2,
-        recipe_no: 1,
-        categoryItem_no: categoryItem_number,
-        start_no: 0,
-        recipe_cnt: 8
-      })
-    })
+    fetch(
+      `http://10.58.6.255:8000/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
       .then(response => {
         return response.json();
       })
       .then(response => {
         this.setState({
-          recipeList: response
+          active_category: categoryItem_number,
+          recipeList: response.result
         });
-        // console.log(response);
       });
   }
 
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
     this.requestRecipeList(categoryItem_number);
-    // if (e.currentTarget !== undefined) {
-    //   this.setState({
-    //     color: "orange",
-    //     borderBottom: "orange"
-    //   });
-    // }
   };
 
   render() {
-    console.log(this.categoryItem_number, "ddd");
-
+    console.log(this.state.active_category, "넘버뜨라고");
     return (
       <>
         <div className="RecipeWrap">
@@ -90,7 +71,7 @@ class RecipeHome extends React.Component {
                     <RecipeHomeCategory
                       key={key}
                       name={el.name}
-                      value={el.item_no}
+                      value={el.item_number}
                       onChangeCategory={this.onChangeCategory}
                     />
                   );
@@ -99,7 +80,7 @@ class RecipeHome extends React.Component {
               <div className="design">
                 {this.state.recipeList.map((item, index) => {
                   return (
-                    <Link to={`/recipe_page/${item.recipe_no}`}>
+                    <Link to={`/recipe_page/${item.recipe_number}`}>
                       <HomeRecipeItem
                         key={index}
                         img={item.image}

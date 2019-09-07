@@ -2,7 +2,6 @@ import React from "react";
 import NewsHomeCategory from "./NewsHomeCategory";
 import { Link } from "react-router-dom";
 import HomeNewsItem from "../../Components/Home/HomeNewsItem";
-
 import "./NewsHome.scss";
 
 class NewsHome extends React.Component {
@@ -26,17 +25,24 @@ class NewsHome extends React.Component {
         return response.json();
       })
       .then(response => {
-        this.setState({ category: response });
+        this.setState({
+          category: response[1].id
+        });
       });
 
     this.requestNewsList(this.state.active_category);
   }
 
   requestNewsList(categoryItem_number) {
-    fetch("http://10.58.4.51:8080/news/1/0", {
-      method: "POST",
+    fetch(`http://10.58.4.51:8080/news/${this.categoryItem_number}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json"
+      },
+      Params: {
+        category_item_number: categoryItem_number,
+        start_offset: 0,
+        recipe_count: 8
       }
     })
       .then(response => {
@@ -49,11 +55,11 @@ class NewsHome extends React.Component {
       });
   }
   onChangeCategory = e => {
-    let categoryItem_number = Number(e.currentTarget.id);
+    let categoryItem_number = Number(e.currentTarget[0].id);
     this.requestNewsList(categoryItem_number);
   };
   render() {
-    console.log(this.state.category, "카테고리 나와라 제발");
+    console.log(this.state.category, "요기요");
     return (
       <>
         <div className="NewsWrap">
@@ -64,8 +70,7 @@ class NewsHome extends React.Component {
                   return (
                     <NewsHomeCategory
                       key={key}
-                      title={el.title}
-                      items={el.items}
+                      name={el.name}
                       value={el.item_no}
                       onChangeCategory={this.onChangeCategory}
                     />

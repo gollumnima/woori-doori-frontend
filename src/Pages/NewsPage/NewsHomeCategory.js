@@ -2,6 +2,10 @@ import React from "react";
 import "./NewsHome.scss";
 
 class NewsHomeCategory extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   onClinkHandler = e => {
     this.props.onChangeCategory(e);
   };

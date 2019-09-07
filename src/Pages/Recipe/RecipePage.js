@@ -6,7 +6,7 @@ class RecipePage extends React.Component {
     super(props);
 
     this.state = {
-      recipeNo: this.props.match.params.id,
+      recipeNo: this.props.match.params.recipe_number,
       recipeDetail: {
         name: "",
         method: "",
@@ -16,25 +16,24 @@ class RecipePage extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.6.255:8000/recipe/recipes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        command: 1,
-        recipe_no: this.props.match.params.id,
-        categoryItem_no: 2,
-        start_no: 0,
-        recipe_cnt: 3
-      })
-    })
+    fetch(
+      `http://10.58.6.255:8000/recipe/recipes?category_item_number=${this.categoryItem_number}&start_offset=0&recipe_count=8`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        Params: {
+          category_item_number: this.props.categoryItem_number,
+          start_offset: 0,
+          recipe_count: 8
+        }
+      }
+    )
       .then(response => {
-        // console.log("1: ", response);
         return response.json();
       })
       .then(response => {
-        // console.log("2: ", response.message);
         this.setState({
           recipeDetail: response
         });
@@ -45,7 +44,6 @@ class RecipePage extends React.Component {
 
   render() {
     let { recipeDetail } = this.state;
-    // console.log(recipeDetail.method);
 
     return (
       <>
