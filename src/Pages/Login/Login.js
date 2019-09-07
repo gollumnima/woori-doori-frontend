@@ -2,14 +2,19 @@ import React from "react";
 import "./Login.scss";
 import Logo from "./wooridoori.png";
 
+const SIGN_IN_END_POINT = "http://10.58.1.192:8050/users/signin";
+
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
+      isLogIn: false,
       valueId: "",
       valuePw: "",
       Kakao: {}
     };
+
+    this.isSuccess = false;
   }
   inputValueId = e => {
     this.setState({ valueId: e.target.value });
@@ -22,6 +27,49 @@ class Login extends React.Component {
       alert("아이디를 입력해주세요");
     } else if (this.state.valuePw === "") {
       alert("비번을 입력해주세요");
+    }
+
+    if (this.isSuccess === false) {
+      fetch(SIGN_IN_END_POINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          user_id: this.state.valueId,
+          password: this.state.valuePw
+        })
+      })
+        .then(response => {
+          // console.log("1: ", response);
+          if (response.status === 200) {
+            this.isSuccess = true;
+          } else {
+            this.isSuccess = false;
+          }
+
+          return response.json();
+        })
+        .then(response => {
+          // console.log("2: ", response.message);
+          if (this.isSuccess === true) {
+            localStorage.setItem("access_token", response.access_token);
+            localStorage.setItem("User", this.state.valueId);
+            this.setState({
+              isLogin: true
+            });
+            // alert(`정상적으로 로그인이 진행되었습니다.`);
+          } else {
+            alert(`로그인 중 에러가 발생하였습니다. [${response.message}]`);
+          }
+        });
+    } else {
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("User");
+      this.setState({
+        isLogin: false
+      });
+      this.isSuccess = false;
     }
   };
 
@@ -39,6 +87,17 @@ class Login extends React.Component {
     this.setState({
       Kakao: window.Kakao
     });
+
+    // 내부변수 선언
+    let isThereKey = localStorage.getItem("access_token");
+    let UserName = localStorage.getItem("User");
+    if (isThereKey !== null) {
+      this.setState({
+        isLogIn: true,
+        user_id: UserName
+      });
+      this.isSuccess = true;
+    }
   }
 
   onClickHandleKakaoLogin = () => {
@@ -60,6 +119,8 @@ class Login extends React.Component {
 
   render() {
     console.log(this.state.Kakao);
+    console.log(this.state.isLogin);
+
     return (
       <div className="login-wrap ">
         <div className="login-bgBox">
@@ -92,7 +153,7 @@ class Login extends React.Component {
                   : "login-btn"
               }
             >
-              Login
+              {this.isSuccess ? "Logout" : "Login"}
             </button>
             <div id="kakao_login_btn" onClick={this.onClickHandleKakaoLogin} />
           </div>
