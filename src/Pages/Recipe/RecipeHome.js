@@ -11,7 +11,8 @@ class RecipeHome extends React.Component {
     this.state = {
       category: [],
       recipeList: [],
-      active_category: 1
+      active_category: 1,
+      selectedIndex: 0
     };
   }
 
@@ -54,6 +55,9 @@ class RecipeHome extends React.Component {
 
   onChangeCategory = e => {
     let categoryItem_number = Number(e.currentTarget.id);
+    this.setState({
+      selectedIndex: categoryItem_number - 1
+    });
     this.requestRecipeList(categoryItem_number);
   };
 
@@ -67,20 +71,26 @@ class RecipeHome extends React.Component {
             <div className="RecipeHome page_wrapper">
               <div className="tag_round">
                 {this.state.category.map((el, key) => {
+                  let selectedStatus =
+                    key === this.state.selectedIndex ? true : false;
+
                   return (
                     <RecipeHomeCategory
                       key={key}
                       name={el.name}
                       value={el.item_number}
                       onChangeCategory={this.onChangeCategory}
+                      selected={selectedStatus}
                     />
                   );
                 })}
               </div>
               <div className="design">
                 {this.state.recipeList.map((item, index) => {
+                  let category = item.category_item__item_number;
+
                   return (
-                    <Link to={`/recipe_page/${item.recipe_number}`}>
+                    <Link to={`/recipe_page/${category}/${index}`}>
                       <HomeRecipeItem
                         key={index}
                         img={item.image}

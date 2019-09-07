@@ -25,8 +25,13 @@ class NewsHome extends React.Component {
         return response.json();
       })
       .then(response => {
+        let categoryList = response.map((el) => {
+          return el.tag;      
+        });
+
         this.setState({
-          category: response[1].id
+          category: categoryList
+          })
         });
       });
 
@@ -80,7 +85,7 @@ class NewsHome extends React.Component {
               <div className="design">
                 {this.state.recipeList.map((item, index) => {
                   return (
-                    <Link to={`/recipe_page/${item.recipe_no}`}>
+                    <Link to={`/recipe_page/${item.id}`}>
                       <HomeNewsItem
                         key={index}
                         img={item.image}

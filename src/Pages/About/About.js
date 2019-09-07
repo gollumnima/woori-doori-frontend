@@ -15,7 +15,7 @@ class About extends React.Component {
               img="https://gollumnima.github.io/photo.jpg"
               h1="김두리"
               span="Front-end"
-              h3="Home, About, Recipe_Page"
+              h3="Home, About, Recipe Page"
               button="Contact"
             />
             <Profile
@@ -33,15 +33,17 @@ class About extends React.Component {
               button="Contact"
             />
             <Profile
+              img="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.0-9/12744247_957404471009720_5070514958313577704_n.jpg?_nc_cat=101&_nc_oc=AQlA1OCear0JyLnij-VTwU5Or5pU_MuKdC1mW5SYxNeDuZZKrvcOn1-VE-JWNF7oGdc&_nc_ht=scontent-gmp1-1.xx&oh=89faf91984473abee59576a502150cbd&oe=5DF6ED4F"
               h1="최승윤"
               span="Back-end"
               h3="News Api"
               button="Contact"
             />
             <Profile
+              img="https://files.slack.com/files-pri/TH0U6FBTN-FN6HFCLDU/20181013_013305.jpg"
               h1="한광훈"
-              span="Full Stack"
-              h3="SignUp, Routing, Recipe Api"
+              span="Full-Stack"
+              h3="SignUp, Dynamic Routing, Recipe Api"
               button="Contact"
             />
           </div>

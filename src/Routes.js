@@ -23,7 +23,11 @@ class Routes extends React.Component {
           {/* <Route path="/recipe_page" component={RecipePage} /> */}
           <Route exact path="/news_page/:id" component={NewsPage} />
           {/* <Route exact path="/news_page" component={NewsPage} /> */}
-          <Route exact path="/recipe_page/:id" component={RecipePage} />
+          <Route
+            exact
+            path="/recipe_page/:category/:order"
+            component={RecipePage}
+          />
           <Route exact path="/recipehome" component={RecipeHome} />
           {/* <Route exact path="/newsHome" component={NewsHome} /> */}
         </Switch>
