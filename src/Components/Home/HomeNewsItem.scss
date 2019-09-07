@@ -7,6 +7,7 @@
   .info_title {
     background-color: white;
     border-top: 0.5px solid #bdbdbd;
+
     h3 {
       color: orange;
       font-size: 18px;
@@ -18,14 +19,21 @@
     h1 {
       font-size: 30px;
       font-weight: 600;
-      overflow: hidden;
       margin-top: 10px;
     }
     h2 {
       color: #625d5d;
-      margin-top: 5px;
-      font-size: 15px;
       overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* 라인수 */
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+      line-height: 1.2em;
+      // width: 150px;
+      // overflow: hidden;
+      // white-space: nowrap;
+      // text-overflow: ellipsis;
       margin-top: 20px;
     }
   }

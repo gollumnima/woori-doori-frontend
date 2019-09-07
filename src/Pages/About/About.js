@@ -29,8 +29,7 @@ class About extends React.Component {
               img="https://files.slack.com/files-pri/TH0U6FBTN-FN45WQ537/image_from_ios.jpg"
               h1="최경용"
               span="Front-end"
-              h3="Login, Recipe_Home,
-              News_Page"
+              h3="Login, Recipe_Home"
               button="Contact"
             />
             <Profile

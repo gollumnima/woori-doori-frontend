@@ -12,7 +12,7 @@ class NewsPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.4.51:8080/news/0/0")
+    fetch(`http://10.58.4.51:8080/news?offset=0`)
       .then(response => response.json())
       .then(result => {
         this.setState({

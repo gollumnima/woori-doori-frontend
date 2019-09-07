@@ -87,7 +87,7 @@ class Home extends React.Component {
   newsIndex = this.randomNum();
 
   render() {
-    console.log(this.state.homeNews, "뉴우스");
+    // console.log(this.state.homeNews, "뉴우스");
     return (
       <div className="home_container page_wrapper">
         <div className="home_total_page_wrapper">

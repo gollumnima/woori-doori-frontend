@@ -1,5 +1,9 @@
 import React from "react";
 import NewsHomeCategory from "./NewsHomeCategory";
+import { Link } from "react-router-dom";
+import HomeNewsItem from "../../Components/Home/HomeNewsItem";
+
+import "./NewsHome.scss";
 
 class NewsHome extends React.Component {
   constructor() {
@@ -11,18 +15,8 @@ class NewsHome extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   for (let index = 0; index < CategoryData.length; index++) {
-  //     this.state.selectedCategory[CategoryData[index].title[1]] = -1;
-  //   }
-
-  //   this.setState({
-  //     category: this.state.category,
-  //     selectedCategory: this.state.selectedCategory
-  //   });
-  // }
   componentDidMount() {
-    fetch("http://10.58.4.51:8080/news/1/0", {
+    fetch("http://10.58.4.51:8080/news/tags", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -59,6 +53,7 @@ class NewsHome extends React.Component {
     this.requestNewsList(categoryItem_number);
   };
   render() {
+    console.log(this.state.category, "카테고리 나와라 제발");
     return (
       <>
         <div className="NewsWrap">
@@ -77,7 +72,21 @@ class NewsHome extends React.Component {
                   );
                 })}
               </div>
-              <div className="design"></div>
+              <div className="design">
+                {this.state.recipeList.map((item, index) => {
+                  return (
+                    <Link to={`/recipe_page/${item.recipe_no}`}>
+                      <HomeNewsItem
+                        key={index}
+                        img={item.image}
+                        desc={item.categoryItem__name}
+                        title={item.title}
+                        name={item.name}
+                      />
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
