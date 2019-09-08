@@ -17,7 +17,7 @@ class RecipeHome extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.6.255:8000/recipe/category", {
+    fetch("http://13.125.67.255:8000/recipe/category", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -34,7 +34,7 @@ class RecipeHome extends React.Component {
 
   requestRecipeList(categoryItem_number) {
     fetch(
-      `http://10.58.6.255:8000/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
+      `http://13.125.67.255:8000/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
       {
         method: "GET",
         headers: {

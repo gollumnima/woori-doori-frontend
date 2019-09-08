@@ -20,7 +20,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     fetch(
-      "http://10.58.6.255:8000/recipe/recipes?category_item_number=3&start_offset=0&recipe_count=4",
+      "http://13.125.67.255:8000/recipe/recipes?category_item_number=3&start_offset=0&recipe_count=4",
       {
         method: "GET",
         headers: {
@@ -37,7 +37,7 @@ class Home extends React.Component {
         });
       });
     fetch(
-      "http://10.58.6.255:8000/recipe/recipes?category_item_number=1&start_offset=0&recipe_count=4",
+      "http://13.125.67.255:8000/recipe/recipes?category_item_number=1&start_offset=0&recipe_count=4",
       {
         method: "GET",
         headers: {
