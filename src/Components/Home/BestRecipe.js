@@ -25,8 +25,9 @@ class BestRecipe extends React.Component {
     return (
       <>
         {this.props.recipe.map((el, index) => {
+          let category = el.category_item__item_number;
           return (
-            <Link to={`/recipe_page/${el.recipe_no}`}>
+            <Link to={`/recipe_page/${category}/${index}`}>
               <HomeRecipeItem
                 key={index}
                 title={el.title}
