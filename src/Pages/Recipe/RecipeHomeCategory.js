@@ -14,6 +14,7 @@ class RecipeHomeCategory extends React.Component {
   };
 
   render() {
+    console.log("확인", this.props);
     return (
       <div className="check_box">
         <div className="RecipeButton">
