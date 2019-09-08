@@ -7,14 +7,14 @@ class Profile extends React.Component {
       <>
         <div className="profile_container">
           <div className="profile_box">
-            <div className="photo_wrapper">
-              <img src={require("../../img/doori.jpg")} alt="doori" />
-            </div>
+            <img src={this.props.img} alt={this.props.h1} />
             <div className="words_wrapper">
               <h1>{this.props.h1}</h1>
               <span>{this.props.span}</span>
               <h3>{this.props.h3}</h3>
-              <button>{this.props.button}</button>
+              <p>
+                <button>{this.props.button}</button>
+              </p>
             </div>
           </div>
         </div>

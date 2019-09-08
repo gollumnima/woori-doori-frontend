@@ -19,53 +19,41 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props, "ssdafsd");
-    console.log("componetDidMount BestRecipe");
-    fetch("http://10.58.6.255:8000/recipe/recipes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        command: 3,
-        recipe_no: 1,
-        categoryItem_no: 2,
-        start_no: 0,
-        recipe_cnt: 4
-      })
-    })
+    fetch(
+      "http://10.58.6.255:8000/recipe/recipes?category_item_number=3&start_offset=0&recipe_count=4",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
       .then(response => {
         return response.json();
       })
       .then(response => {
         this.setState({
-          recentRecipe: response
+          recentRecipe: response.result
         });
-        // console.log(response);
       });
-    fetch("http://10.58.6.255:8000/recipe/recipes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        command: 2,
-        recipe_no: 1,
-        categoryItem_no: 2,
-        start_no: 1,
-        recipe_cnt: 4
-      })
-    })
+    fetch(
+      "http://10.58.6.255:8000/recipe/recipes?category_item_number=1&start_offset=0&recipe_count=4",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
       .then(response => {
         return response.json();
       })
       .then(response => {
         this.setState({
-          bestRecipe: response
+          bestRecipe: response.result
         });
-        // console.log(response);
       });
-    fetch("http://10.58.4.51:8080/main_news", {
+    fetch(`http://10.58.4.51:8080/news?offset=${this.newsIndex}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -76,13 +64,22 @@ class Home extends React.Component {
       })
       .then(result => {
         this.setState({
-          homeNews: result
+          homeNews: result[0].news_data
         });
+        // console.log(this.state.homeNews, "홈홈");
       });
   }
 
+  randomNum = () => {
+    return Math.floor(Math.random() * 40);
+  };
+
+  newsIndex = this.randomNum();
+
   render() {
-    console.log(this.state.recipe);
+    // console.log(this.state.homeNews, "뉴우스");
+    console.log(this.state.bestRecipe, "얍");
+
     return (
       <div className="home_container page_wrapper">
         <div className="home_total_page_wrapper">

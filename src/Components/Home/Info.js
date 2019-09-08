@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import HomeNewsItem from "./HomeNewsItem";
 
 class Info extends Component {
@@ -8,16 +8,17 @@ class Info extends Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-  //   fetch("http://10.58.4.51:8080/main_news")
-  //     .then(response => response.json())
-  //     .then(result => {
-  //       this.setState({
-  //         HomeNewsList: result
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    fetch(`http://10.58.4.51:8080/news/${this.props.newslist.id}`)
+      .then(response => response.json())
+      .then(result => {
+        this.setState({
+          HomeNewsList: result
+        });
+      });
+  }
   render() {
+    console.log(this.props, "ssdfasdsdfasd");
     // const { HomeNewsList } = this.state;
     // console.log(this.state.HomeNewsList, "ssssssddddd");
     return (
@@ -40,7 +41,7 @@ class Info extends Component {
   }
 }
 
-export default Info;
+export default withRouter(Info);
 
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";
