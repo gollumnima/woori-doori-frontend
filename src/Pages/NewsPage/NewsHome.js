@@ -1,6 +1,7 @@
 import React from "react";
 import NewsHomeCategory from "./NewsHomeCategory";
 import { Link } from "react-router-dom";
+import Navbar from "../../Components/Home/Navbar";
 import HomeNewsItem from "../../Components/Home/HomeNewsItem";
 import "./NewsHome.scss";
 
@@ -10,12 +11,13 @@ class NewsHome extends React.Component {
     this.state = {
       category: [],
       newsList: [],
-      active_category: 1
+      active_category: 1,
+      selectedIndex: 0
     };
   }
 
   componentDidMount() {
-    fetch("http://10.58.4.51:8080/news/tags", {
+    fetch("http://13.209.12.87:8000/news/tags", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -25,29 +27,22 @@ class NewsHome extends React.Component {
         return response.json();
       })
       .then(response => {
-        let categoryList = response.map((el) => {
-          return el.tag;      
+        let categoryList = response.map(el => {
+          return el.tag;
         });
 
         this.setState({
           category: categoryList
-          })
         });
       });
-
     this.requestNewsList(this.state.active_category);
   }
 
   requestNewsList(categoryItem_number) {
-    fetch(`http://10.58.4.51:8080/news/${this.categoryItem_number}`, {
+    fetch(`http://13.209.12.87:8000/news?offset=1`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
-      },
-      Params: {
-        category_item_number: categoryItem_number,
-        start_offset: 0,
-        recipe_count: 8
       }
     })
       .then(response => {
@@ -55,16 +50,37 @@ class NewsHome extends React.Component {
       })
       .then(response => {
         this.setState({
-          newsList: response
+          newsList: response[0].news_data.map(el => {
+            if (el.tag_id === categoryItem_number) {
+              return el;
+            } else {
+              return "";
+            }
+          }),
+          active_category: categoryItem_number
         });
       });
   }
   onChangeCategory = e => {
-    let categoryItem_number = Number(e.currentTarget[0].id);
+    let categoryItem_number = Number(e.currentTarget.id);
+    this.setState({
+      selectedIndex: categoryItem_number - 1
+    });
     this.requestNewsList(categoryItem_number);
   };
+
+  // callNewsAll = () => {
+  //   let arrList = [0, 10, 20, 30, 40];
+  //   arrList.map(el => {
+  //     return el;
+  //   });
+  // };
+
   render() {
-    console.log(this.state.category, "요기요");
+    console.log(this.state.active_category, "카테고;ost리");
+    console.log(this.state.category, "배열쓰");
+    console.log(this.state.newsList, "리스트");
+    // console.log(this.callNewsAll());
     return (
       <>
         <div className="NewsWrap">
@@ -72,29 +88,35 @@ class NewsHome extends React.Component {
             <div className="NewsHome page_wrapper">
               <div className="tag_round">
                 {this.state.category.map((el, key) => {
+                  let selectedStatus =
+                    key === this.state.selectedIndex ? true : false;
+
                   return (
                     <NewsHomeCategory
                       key={key}
-                      name={el.name}
-                      value={el.item_no}
+                      name={el}
+                      value={el.tag_id}
                       onChangeCategory={this.onChangeCategory}
+                      selected={selectedStatus}
                     />
                   );
                 })}
               </div>
               <div className="design">
-                {this.state.recipeList.map((item, index) => {
-                  return (
-                    <Link to={`/recipe_page/${item.id}`}>
-                      <HomeNewsItem
-                        key={index}
-                        img={item.image}
-                        desc={item.categoryItem__name}
-                        title={item.title}
-                        name={item.name}
-                      />
-                    </Link>
-                  );
+                {this.state.newsList.map((item, index) => {
+                  if (item !== "") {
+                    return (
+                      <Link to={`/news/:${item.id}`}>
+                        <HomeNewsItem
+                          key={index}
+                          category={item.tag}
+                          title={item.title}
+                          summary={item.content}
+                          thumbnail={item.image_url}
+                        />
+                      </Link>
+                    );
+                  }
                 })}
               </div>
             </div>

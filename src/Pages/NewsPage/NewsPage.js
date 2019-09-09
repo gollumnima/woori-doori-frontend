@@ -1,7 +1,5 @@
 import React from "react";
 import "./NewsPage.scss";
-import Comment from "../../Components/Home/Comment";
-// import axios from "axios";
 
 class NewsPage extends React.Component {
   constructor() {
@@ -12,11 +10,13 @@ class NewsPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.4.51:8080/news?offset=0`)
+    fetch(`http://13.209.12.87:8000/news?offset=0`)
       .then(response => response.json())
       .then(result => {
         this.setState({
-          NewsList: result
+          NewsList: result[0].news_data.map(el => {
+            return el;
+          })
         });
       });
   }
@@ -47,11 +47,10 @@ class NewsPage extends React.Component {
                     </div>
                   </div>
                   <div className="newsie">
-                    <img src={el.image_url} alt="hamburger"></img>
+                    <img src={el.image_url} alt={el.title}></img>
                   </div>
                 </div>
               </div>
-              <Comment />
             </div>
           );
         })}
