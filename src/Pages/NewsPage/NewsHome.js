@@ -12,7 +12,8 @@ class NewsHome extends React.Component {
       category: [],
       newsList: [],
       active_category: 1,
-      selectedIndex: 0
+      selectedIndex: 0,
+      indexCount: 0
     };
   }
 
@@ -39,12 +40,15 @@ class NewsHome extends React.Component {
   }
 
   requestNewsList(categoryItem_number) {
-    fetch(`http://13.209.12.87:8000/news?offset=1`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
+    fetch(
+      `http://13.209.12.87:8000/news?offset=1&tag_num=${categoryItem_number}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
       }
-    })
+    )
       .then(response => {
         return response.json();
       })
@@ -69,18 +73,8 @@ class NewsHome extends React.Component {
     this.requestNewsList(categoryItem_number);
   };
 
-  // callNewsAll = () => {
-  //   let arrList = [0, 10, 20, 30, 40];
-  //   arrList.map(el => {
-  //     return el;
-  //   });
-  // };
-
   render() {
-    console.log(this.state.active_category, "카테고;ost리");
-    console.log(this.state.category, "배열쓰");
-    console.log(this.state.newsList, "리스트");
-    // console.log(this.callNewsAll());
+    console.log(this.state.newsList, "리스트얏");
     return (
       <>
         <div className="NewsWrap">
@@ -105,7 +99,7 @@ class NewsHome extends React.Component {
                 {this.state.newsList.map((item, index) => {
                   if (item !== "") {
                     return (
-                      <Link to={`/news/:${item.id}`}>
+                      <Link to={`/news/${item.id}`}>
                         <HomeNewsItem
                           key={index}
                           category={item.tag}
