@@ -43,7 +43,7 @@ class RecipeHome extends React.Component {
       }
     )
       .then(response => {
-        response.json();
+        return response.json();
       })
       .then(response => {
         this.setState({
