@@ -12,6 +12,7 @@ import NewsHome from "./Pages/NewsPage/NewsHome";
 
 class Routes extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <Router>
         <Navbar />

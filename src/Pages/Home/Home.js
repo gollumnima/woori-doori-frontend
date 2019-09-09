@@ -29,7 +29,7 @@ class Home extends React.Component {
       }
     )
       .then(response => {
-        return response.json();
+        response.json();
       })
       .then(response => {
         this.setState({
@@ -46,7 +46,7 @@ class Home extends React.Component {
       }
     )
       .then(response => {
-        return response.json();
+        response.json();
       })
       .then(response => {
         this.setState({
