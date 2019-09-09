@@ -8,6 +8,7 @@ import HomeRecipeItem from "./HomeRecipeItem";
 class BestRecipe extends React.Component {
   constructor() {
     super();
+    this.state = {};
   }
 
   // onChangeCategory = e => {

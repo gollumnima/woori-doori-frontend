@@ -90,12 +90,11 @@ class NewsHome extends React.Component {
                 {this.state.category.map((el, key) => {
                   let selectedStatus =
                     key === this.state.selectedIndex ? true : false;
-
                   return (
                     <NewsHomeCategory
                       key={key}
                       name={el}
-                      value={el.tag_id}
+                      value={key + 1}
                       onChangeCategory={this.onChangeCategory}
                       selected={selectedStatus}
                     />

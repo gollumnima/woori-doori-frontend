@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomeNewsItem from "./HomeNewsItem";
 
 class Info extends Component {
@@ -7,25 +7,15 @@ class Info extends Component {
     super();
     this.state = {};
   }
-
-  componentDidMount() {
-    fetch(`http://10.58.4.51:8080/news/${this.props.newslist.id}`)
-      .then(response => response.json())
-      .then(result => {
-        this.setState({
-          HomeNewsList: result
-        });
-      });
-  }
   render() {
-    console.log(this.props, "ssdfasdsdfasd");
+    console.log(this.props.newslist, " 무엇");
     // const { HomeNewsList } = this.state;
     // console.log(this.state.HomeNewsList, "ssssssddddd");
     return (
       <>
         {this.props.newslist.map((el, index) => {
           return (
-            <Link to={`/news_page/${el.id}`}>
+            <Link to={`/news/${el.id}`}>
               <HomeNewsItem
                 key={index}
                 category={el.tag}
@@ -41,7 +31,7 @@ class Info extends Component {
   }
 }
 
-export default withRouter(Info);
+export default Info;
 
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";
