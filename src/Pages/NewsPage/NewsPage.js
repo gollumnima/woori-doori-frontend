@@ -36,7 +36,7 @@ class NewsPage extends React.Component {
             <h1>{NewsList.title}</h1>
           </div>
           <div className="news_container">
-            <div className="cooking_process">
+            <div className="news_process">
               <div className="ingredients_box">
                 <h1 className="title_line">{NewsList.tag}</h1>
                 <h5> </h5>
