@@ -64,25 +64,23 @@ $white: white;
   .login-btn {
     border: 1px solid $doriColor;
     width: 40%;
+    margin-bottom: 20px;
+
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 30px;
     background: $doriColor;
     color: $white;
     margin-top: 10%;
-    cursor: pointer;
-  }
-  .login-btn:hover {
-    opacity: 0.4;
   }
   .login-btnChange {
-    border: 1px solid $doriColor;
+    border: 1px solid skyblue;
     width: 40%;
+    margin-bottom: 20px;
     border-radius: 15px;
-    font-size: 20px;
-    background: $doriColor;
+    font-size: 30px;
+    background: skyblue;
     color: $white;
     margin-top: 10%;
-    cursor: pointer;
   }
   .login-checkbox-container {
     width: 78%;
@@ -90,38 +88,6 @@ $white: white;
 
     .login-remember {
       font-size: 0.8rem;
-    }
-  }
-  a {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .login_page_signup {
-    border: 1px solid $doriColor;
-    width: 40%;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    font-size: 20px;
-    background: $doriColor;
-    color: $white;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  .login_page_signup:hover {
-    opacity: 0.4;
-  }
-  #kakao_login_btn {
-    width: 40%;
-    margin-bottom: 20px;
-    font-size: 20px;
-    background: white;
-    color: $white;
-    margin-top: -10px;
-
-    cursor: pointer;
-    img {
-      width: 100%;
     }
   }
 }

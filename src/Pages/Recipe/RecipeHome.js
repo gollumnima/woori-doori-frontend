@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
-// import Navbar from "../../Components/Home/Navbar";
+import Navbar from "../../Components/Home/Navbar";
 import HomeRecipeItem from "../../Components/Home/HomeRecipeItem";
 import "./RecipeHome.scss";
 
@@ -43,7 +43,7 @@ class RecipeHome extends React.Component {
       }
     )
       .then(response => {
-        response.json();
+        return response.json();
       })
       .then(response => {
         this.setState({
@@ -66,6 +66,7 @@ class RecipeHome extends React.Component {
     return (
       <>
         <div className="RecipeWrap">
+          <Navbar />
           <div className="RecipeHome-tag">
             <div className="RecipeHome page_wrapper">
               <div className="tag_round">

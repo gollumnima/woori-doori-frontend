@@ -8,9 +8,7 @@ class Navbar extends React.Component {
     this.state = {
       isOpen: false
     };
-    this.getToken = localStorage.getItem("access_token");
   }
-
   openMenu = e => {
     if (e.currentTarget.name === "menu_off") {
       this.state.isOpen = 0;
@@ -22,11 +20,7 @@ class Navbar extends React.Component {
     });
   };
 
-  statetoken = () => {
-    localStorage.removeItem("access_token");
-  };
   render() {
-    console.log(this.props);
     return (
       <div className="nav_container">
         <nav className="nav_bar">
@@ -45,16 +39,10 @@ class Navbar extends React.Component {
                   Menu
                 </h1>
               </div>
-              <div className="login_wrap" onClick={this.statetoken}>
-                {this.getToken ? (
-                  <Link to="/" name="menu_off" onClick={this.openMenu}>
-                    <h1>Logout</h1>
-                  </Link>
-                ) : (
-                  <Link to="/login" name="menu_off" onClick={this.openMenu}>
-                    <h1>Login</h1>
-                  </Link>
-                )}
+              <div className="login_wrap">
+                <Link to="/login" name="menu_off" onClick={this.openMenu}>
+                  <h1>Login</h1>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,11 +1,9 @@
 import React from "react";
-import Navbar from "../../Components/Home/Navbar";
 import "./Login.scss";
 import Logo from "./wooridoori.png";
-import { Link } from "react-router-dom";
 
 const SIGN_IN_END_POINT = "http://10.58.1.192:8050/users/signin";
-window.Kakao.init("291f1b347d863f6fa9e2359a36732f6c");
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -13,8 +11,7 @@ class Login extends React.Component {
       isLogIn: false,
       valueId: "",
       valuePw: "",
-      Kakao: {},
-      isOpen: false
+      Kakao: {}
     };
 
     this.isSuccess = false;
@@ -58,10 +55,9 @@ class Login extends React.Component {
           if (this.isSuccess === true) {
             localStorage.setItem("access_token", response.access_token);
             localStorage.setItem("User", this.state.valueId);
-            this.props.history.push("/home");
-            // this.setState({
-            //   isLogin: true
-            // });
+            this.setState({
+              isLogin: true
+            });
             // alert(`정상적으로 로그인이 진행되었습니다.`);
           } else {
             alert(`로그인 중 에러가 발생하였습니다. [${response.message}]`);
@@ -70,14 +66,15 @@ class Login extends React.Component {
     } else {
       localStorage.removeItem("access_token");
       localStorage.removeItem("User");
-      // this.setState({
-      //   isLogin: false
-      // });
+      this.setState({
+        isLogin: false
+      });
       this.isSuccess = false;
     }
   };
 
   componentDidMount() {
+    window.Kakao.init("291f1b347d863f6fa9e2359a36732f6c");
     window.Kakao.Auth.createLoginButton({
       container: "#kakao_login_btn",
       success: function(authObj) {
@@ -114,22 +111,16 @@ class Login extends React.Component {
         })
           .then(response => response.json())
           .then(response => {
-            localStorage.setItem("access_token", response.access_token);
             console.log(response);
           });
       }
     });
-    this.setState({
-      isLogIn: !this.state.isLogIn
-    });
-    this.props.history.push("/");
   };
 
   render() {
-    console.log(this.state.isLogIn);
-    // console.log(this.state.Kakao);
-    // console.log(this.state.isLogin);
-    // console.log(this.state.isOpen);
+    console.log(this.state.Kakao);
+    console.log(this.state.isLogin);
+
     return (
       <div className="login-wrap ">
         <div className="login-bgBox">
@@ -164,12 +155,7 @@ class Login extends React.Component {
             >
               {this.isSuccess ? "Logout" : "Login"}
             </button>
-            <Link to="/signup">
-              <button className="login_page_signup">Signup</button>
-            </Link>
-            {/* <Link to="/home"> */}
             <div id="kakao_login_btn" onClick={this.onClickHandleKakaoLogin} />
-            {/* </Link> */}
           </div>
         </div>
       </div>
