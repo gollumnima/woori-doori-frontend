@@ -62,6 +62,7 @@ class RecipeHome extends React.Component {
   };
 
   render() {
+    console.log(this.state.recipeList, "레시피 리스트야");
     return (
       <>
         <div className="RecipeWrap">
