@@ -11,6 +11,7 @@ import Navbar from "./Components/Home/Navbar";
 
 class Routes extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <Router>
         <Navbar />
