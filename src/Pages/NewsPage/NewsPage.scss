@@ -1,13 +1,12 @@
 .news_page_total_wrap {
   width: 100%;
-  max-width: 1180px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 100px;
   .news_page_container {
     margin-top: 140px;
     .news_name {
-      width: 40%;
+      width: 100%;
       border-bottom: 4px solid black;
       h1 {
         font-weight: bold;
@@ -17,10 +16,8 @@
     .news_container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      .cooking_process {
-        display: grid;
-        grid-template-rows: 1fr 2fr;
-        margin-top: 20px;
+      margin-top: 50px;
+      .news_process {
         .ingredients_box {
           h1 {
             font-weight: bold;
@@ -37,7 +34,6 @@
           }
           h5 {
             ul {
-              list-style: none;
               li {
                 margin-top: 10px;
               }
@@ -47,6 +43,8 @@
       }
       .newsie {
         img {
+          width: 100%;
+          padding-left: 20px;
         }
       }
     }

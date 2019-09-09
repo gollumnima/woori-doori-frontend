@@ -20,7 +20,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     fetch(
-      "http://13.125.67.255:8000/recipe/recipes?category_item_number=3&start_offset=0&recipe_count=4",
+      "http://13.209.12.87:8000/recipe/recipes?category_item_number=3&start_offset=0&recipe_count=4",
       {
         method: "GET",
         headers: {
@@ -37,7 +37,7 @@ class Home extends React.Component {
         });
       });
     fetch(
-      "http://13.125.67.255:8000/recipe/recipes?category_item_number=1&start_offset=0&recipe_count=4",
+      "http://13.209.12.87:8000/recipe/recipes?category_item_number=1&start_offset=0&recipe_count=4",
       {
         method: "GET",
         headers: {
@@ -53,7 +53,7 @@ class Home extends React.Component {
           bestRecipe: response.result
         });
       });
-    fetch(`http://10.58.4.51:8080/news?offset=${this.newsIndex}`, {
+    fetch(`http://13.209.12.87:8000/news?offset=${this.newsIndex}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

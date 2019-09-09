@@ -19,7 +19,7 @@ class RecipePage extends React.Component {
   componentDidMount() {
     debugger;
     fetch(
-      `http://13.125.67.255:8000/recipe/recipes?category_item_number=${this.props.match.params.category}&start_offset=${this.props.match.params.order}&recipe_count=1`,
+      `http://13.209.12.87:8000/recipe/recipes?category_item_number=${this.props.match.params.category}&start_offset=${this.props.match.params.order}&recipe_count=1`,
       {
         method: "GET",
         headers: {
@@ -61,7 +61,6 @@ class RecipePage extends React.Component {
               </div>
             </div>
           </div>
-          {/* <Comment /> */}
         </div>
         {/* <Comment /> */}
       </>

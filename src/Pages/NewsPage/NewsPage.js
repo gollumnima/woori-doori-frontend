@@ -1,7 +1,5 @@
 import React from "react";
 import "./NewsPage.scss";
-import Comment from "../../Components/Home/Comment";
-// import axios from "axios";
 
 class NewsPage extends React.Component {
   constructor() {
@@ -12,50 +10,50 @@ class NewsPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.4.51:8080/news?offset=0`)
+    fetch(`http://13.209.12.87:8000/news/${this.props.match.params.id}`)
       .then(response => response.json())
-      .then(result => {
+      .then(response => {
         this.setState({
-          NewsList: result
+          NewsList: response
         });
       });
   }
 
+  // index_num = this.state.NewsList.map(el => {
+  //   return el.id;
+  // });
   render() {
     const { NewsList } = this.state;
-    console.log(this.state.NewsList, "sddsfaasddsdfz");
+    console.log(this.props, "prop");
+    // console.log(this.index_num, "num");
+    console.log(this.state.NewsList, "asdfasdf");
+    //      {/* {this.state.result ? this.renderNews() : null} */}
+    // {/* {this.state.NewsList.map(el => {
     return (
-      <>
-        {/* {this.state.result ? this.renderNews() : null} */}
-        {NewsList.map(el => {
-          return (
-            <div className="news_page_total_wrap">
-              <div className="news_page_container">
-                <div className="news_name">
-                  <h1>{el.title}</h1>
-                </div>
-                <div className="news_container">
-                  <div className="cooking_process">
-                    <div className="ingredients_box">
-                      <h1 className="title_line">{el.tag}</h1>
-                      <h5> </h5>
-                    </div>
-                    <div className="news_box">
-                      <ul>
-                        <li>{el.content}</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="newsie">
-                    <img src={el.image_url} alt="hamburger"></img>
-                  </div>
-                </div>
+      <div className="news_page_total_wrap">
+        <div className="news_page_container">
+          <div className="news_name">
+            <h1>{NewsList.title}</h1>
+          </div>
+          <div className="news_container">
+            <div className="news_process">
+              <div className="ingredients_box">
+                <h1 className="title_line">{NewsList.tag}</h1>
+                <h5> </h5>
               </div>
-              <Comment />
+              <div className="news_box">
+                <ul>
+                  <li>{NewsList.content}</li>
+                </ul>
+              </div>
             </div>
-          );
-        })}
-      </>
+            <div className="newsie">
+              <img src={NewsList.image_url} alt={NewsList.title}></img>
+            </div>
+          </div>
+        </div>
+      </div>
+      // {/* })} */}
     );
   }
 }
