@@ -32,7 +32,6 @@ class Home extends React.Component {
         return response.json();
       })
       .then(response => {
-        debugger;
         this.setState({
           recentRecipe: response.result
         });
@@ -50,7 +49,6 @@ class Home extends React.Component {
         return response.json();
       })
       .then(response => {
-        debugger;
         this.setState({
           bestRecipe: response.result
         });
