@@ -37,7 +37,11 @@ class Navbar extends React.Component {
             <div className="logo_wrap">
               <Link to="/Home" name="menu_off" onClick={this.openMenu}>
                 <h1>Wooridoori.com</h1>
-                <img src={require("../../img/logo.png")} alt="logo"></img>
+                <img
+                  id="image_logo"
+                  src={require("../../img/logo.png")}
+                  alt="logo"
+                ></img>
               </Link>
             </div>
             <div className="right">
