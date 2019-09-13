@@ -20,8 +20,6 @@ class BestRecipe extends React.Component {
   // };
 
   render() {
-    console.log(this.props);
-    // const { homeRecipe1 } = t÷his.state;
     return (
       <>
         {this.props.recipe.map((el, index) => {

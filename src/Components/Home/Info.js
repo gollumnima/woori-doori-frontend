@@ -9,18 +9,16 @@ class Info extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.4.51:8080/news/${this.props.newslist.id}`)
-      .then(response => response.json())
-      .then(result => {
-        this.setState({
-          HomeNewsList: result
-        });
-      });
+    // fetch(`http://13.209.12.87:8000/news?offset=${this.props.newslist}`)
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     console.log(result);
+    //     this.setState({
+    //       HomeNewsList: result
+    //     });
+    //   });
   }
   render() {
-    console.log(this.props, "ssdfasdsdfasd");
-    // const { HomeNewsList } = this.state;
-    // console.log(this.state.HomeNewsList, "ssssssddddd");
     return (
       <>
         {this.props.newslist.map((el, index) => {

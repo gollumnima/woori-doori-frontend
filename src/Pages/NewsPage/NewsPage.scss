@@ -1,13 +1,12 @@
 .news_page_total_wrap {
   width: 100%;
-  max-width: 1180px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 100px;
   .news_page_container {
     margin-top: 140px;
     .news_name {
-      width: 40%;
+      width: 100%;
       border-bottom: 4px solid black;
       h1 {
         font-weight: bold;
@@ -17,10 +16,8 @@
     .news_container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      .cooking_process {
-        display: grid;
-        grid-template-rows: 1fr 2fr;
-        margin-top: 20px;
+      margin-top: 50px;
+      .news_process {
         .ingredients_box {
           h1 {
             font-weight: bold;
@@ -37,7 +34,6 @@
           }
           h5 {
             ul {
-              list-style: none;
               li {
                 margin-top: 10px;
               }
@@ -47,41 +43,36 @@
       }
       .newsie {
         img {
+          width: 100%;
+          padding-left: 20px;
         }
       }
     }
   }
+  .commnet_title {
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+  .comment_warp {
+    width: 100%;
+    height: 200px;
+    .comment_input_box {
+      height: 150px;
+      width: 100%;
+      resize: none;
+      font-size: 1.2rem;
+    }
+    .btn_box_wrap {
+      height: 30px;
+      display: flex;
+      justify-content: flex-end;
+      .btn_box {
+        height: 100%;
+        width: 70px;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+    }
+  }
 }
-// .news_page_scss {
-//   display: flex;
-//   justify-content: center;
-
-//   .wrap {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     margin-top: 125px;
-//     padding: 30px;
-//     .tittle {
-//       width: 95%;
-//       font-size: 3rem;
-//       border-bottom: 1px solid black;
-//       margin-top: 4%;
-//       padding-bottom: 30px;
-//     }
-//     .newsbox_wrap {
-//       display: flex;
-//       justify-content: center;
-//       margin-top: 30px;
-//       img {
-//         width: 100%;
-//       }
-//       .newsbox1,
-//       .newsbox2 {
-//         width: 50%;
-//         padding: 50px;
-//         font-size: 1.6rem;
-//       }
-//     }
-//   }
-// }

@@ -34,9 +34,9 @@ class NewsHome extends React.Component {
           })
         });
       });
-
-    this.requestNewsList(this.state.active_category);
   }
+  //   this.requestNewsList(this.state.active_category);
+  // }
 
   requestNewsList(categoryItem_number) {
     fetch(`http://10.58.4.51:8080/news/${this.categoryItem_number}`, {
@@ -64,7 +64,6 @@ class NewsHome extends React.Component {
     this.requestNewsList(categoryItem_number);
   };
   render() {
-    console.log(this.state.category, "요기요");
     return (
       <>
         <div className="NewsWrap">
@@ -102,7 +101,6 @@ class NewsHome extends React.Component {
         </div>
       </>
     );
-  }
 }
 
 export default NewsHome;
