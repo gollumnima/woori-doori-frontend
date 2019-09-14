@@ -1,14 +1,20 @@
 import React from "react";
 import Menu from "../../Pages/Menu/Menu";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Navbar.scss";
+
 class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      isOpen: false
+      isOpen: false,
+      token: false
     };
-    this.getToken = localStorage.getItem("access_token");
+    this.getToken = localStorage.getItem("wooridoori-token");
+  }
+
+  componentDidMount() {
+    console.log(this.getToken);
   }
 
   openMenu = e => {
@@ -22,11 +28,14 @@ class Navbar extends React.Component {
     });
   };
 
-  statetoken = () => {
-    localStorage.removeItem("access_token");
+  logout = () => {
+    localStorage.clear();
+    this.setState({ token: !this.state.token });
+    this.props.history.push("/");
   };
+
   render() {
-    console.log(this.props);
+    console.log(this.getToken);
     return (
       <div className="nav_container">
         <nav className="nav_bar">
@@ -50,14 +59,14 @@ class Navbar extends React.Component {
                   Menu
                 </h1>
               </div>
-              <div className="login_wrap" onClick={this.statetoken}>
-                {this.getToken ? (
-                  <Link to="/" name="menu_off" onClick={this.openMenu}>
-                    <h1>Logout</h1>
+              <div className="login_wrap">
+                {!this.getToken ? (
+                  <Link to="/login" name="menu_off">
+                    <h1>Login</h1>
                   </Link>
                 ) : (
-                  <Link to="/login" name="menu_off" onClick={this.openMenu}>
-                    <h1>Login</h1>
+                  <Link to="/" name="menu_off" onClick={this.logout}>
+                    <h1>Logout</h1>
                   </Link>
                 )}
               </div>
@@ -68,4 +77,4 @@ class Navbar extends React.Component {
     );
   }
 }
-export default Navbar;
+export default withRouter(Navbar);

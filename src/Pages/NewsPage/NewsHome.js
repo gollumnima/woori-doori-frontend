@@ -36,8 +36,11 @@ class NewsHome extends React.Component {
           category: categoryList
         });
       });
-    this.requestNewsList(this.state.active_category);
+
+
   }
+  //   this.requestNewsList(this.state.active_category);
+  // }
 
   requestNewsList(categoryItem_number) {
     fetch(
@@ -74,7 +77,7 @@ class NewsHome extends React.Component {
   };
 
   render() {
-    console.log(this.state.newsList, "리스트얏");
+
     return (
       <>
         <div className="NewsWrap">
@@ -117,7 +120,6 @@ class NewsHome extends React.Component {
         </div>
       </>
     );
-  }
 }
 
 export default NewsHome;

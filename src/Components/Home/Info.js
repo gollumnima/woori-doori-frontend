@@ -6,11 +6,10 @@ class Info extends Component {
   constructor() {
     super();
     this.state = {};
-  }
+  } 
+
   render() {
-    console.log(this.props.newslist, " 무엇");
-    // const { HomeNewsList } = this.state;
-    // console.log(this.state.HomeNewsList, "ssssssddddd");
+  
     return (
       <>
         {this.props.newslist.map((el, index) => {
