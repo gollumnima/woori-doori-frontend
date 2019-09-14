@@ -12,9 +12,7 @@ class Profile extends React.Component {
               <h1>{this.props.h1}</h1>
               <span>{this.props.span}</span>
               <h3>{this.props.h3}</h3>
-              <p>
-                <button>{this.props.button}</button>
-              </p>
+              <a href={this.props.url}>{this.props.button}</a>
             </div>
           </div>
         </div>

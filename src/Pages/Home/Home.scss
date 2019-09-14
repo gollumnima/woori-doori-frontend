@@ -17,6 +17,15 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(5rem, 1fr));
         grid-gap: 10px;
+        @media only screen and (max-width: 690px) {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(6rem, 1fr));
+          grid-gap: 10px;
+        }
+        @media only screen and (max-width: 430px) {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
     .news_tap {

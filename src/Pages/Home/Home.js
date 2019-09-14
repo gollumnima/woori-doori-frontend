@@ -77,8 +77,7 @@ class Home extends React.Component {
   newsIndex = this.randomNum();
 
   render() {
-    // console.log(this.state.homeNews, "뉴우스");
-    console.log(this.state.bestRecipe, "얍");
+    console.log(this.state.recentRecipe, "뭐지웬오류냐");
 
     return (
       <div className="home_container page_wrapper">
