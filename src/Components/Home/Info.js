@@ -1,29 +1,20 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomeNewsItem from "./HomeNewsItem";
 
 class Info extends Component {
   constructor() {
     super();
     this.state = {};
-  }
+  } 
 
-  componentDidMount() {
-    // fetch(`http://13.209.12.87:8000/news?offset=${this.props.newslist}`)
-    //   .then(response => response.json())
-    //   .then(result => {
-    //     console.log(result);
-    //     this.setState({
-    //       HomeNewsList: result
-    //     });
-    //   });
-  }
   render() {
+  
     return (
       <>
         {this.props.newslist.map((el, index) => {
           return (
-            <Link to={`/news_page/${el.id}`}>
+            <Link to={`/news/${el.id}`}>
               <HomeNewsItem
                 key={index}
                 category={el.tag}
@@ -39,7 +30,7 @@ class Info extends Component {
   }
 }
 
-export default withRouter(Info);
+export default Info;
 
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";

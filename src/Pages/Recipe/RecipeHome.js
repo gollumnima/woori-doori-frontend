@@ -17,7 +17,7 @@ class RecipeHome extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://13.125.67.255:8000/recipe/category", {
+    fetch("http://13.209.12.87:8000/recipe/category", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -34,7 +34,7 @@ class RecipeHome extends React.Component {
 
   requestRecipeList(categoryItem_number) {
     fetch(
-      `http://13.125.67.255:8000/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
+      `http://13.209.12.87:8000/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
       {
         method: "GET",
         headers: {
@@ -43,7 +43,7 @@ class RecipeHome extends React.Component {
       }
     )
       .then(response => {
-        response.json();
+        return response.json();
       })
       .then(response => {
         this.setState({
@@ -62,7 +62,7 @@ class RecipeHome extends React.Component {
   };
 
   render() {
-    console.log(this.state.active_category, "넘버뜨라고");
+    console.log(this.state.recipeList, "레시피 리스트야");
     return (
       <>
         <div className="RecipeWrap">

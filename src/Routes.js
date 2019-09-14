@@ -8,6 +8,7 @@ import Signup from "./Pages/Signup/Signup";
 import RecipeHome from "./Pages/Recipe/RecipeHome";
 import NewsPage from "./Pages/NewsPage/NewsPage";
 import Navbar from "./Components/Home/Navbar";
+import NewsHome from "./Pages/NewsPage/NewsHome";
 
 class Routes extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class Routes extends React.Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/home" component={Home} />
           {/* <Route path="/recipe_page" component={RecipePage} /> */}
-          <Route exact path="/news_page/:id" component={NewsPage} />
+          <Route exact path="/news/:id" component={NewsPage} />
           {/* <Route exact path="/news_page" component={NewsPage} /> */}
           <Route
             exact
@@ -29,7 +30,7 @@ class Routes extends React.Component {
             component={RecipePage}
           />
           <Route exact path="/recipehome" component={RecipeHome} />
-          {/* <Route exact path="/newsHome" component={NewsHome} /> */}
+          <Route exact path="/newshome" component={NewsHome} />
         </Switch>
       </Router>
     );
