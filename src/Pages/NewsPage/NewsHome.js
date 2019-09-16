@@ -1,7 +1,6 @@
 import React from "react";
 import NewsHomeCategory from "./NewsHomeCategory";
 import { Link } from "react-router-dom";
-import Navbar from "../../Components/Home/Navbar";
 import HomeNewsItem from "../../Components/Home/HomeNewsItem";
 import "./NewsHome.scss";
 
@@ -18,7 +17,7 @@ class NewsHome extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://13.209.12.87:8000/news/tags", {
+    fetch("http://10.58.5.78:8080/news/tags", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -36,15 +35,11 @@ class NewsHome extends React.Component {
           category: categoryList
         });
       });
-
-
   }
-  //   this.requestNewsList(this.state.active_category);
-  // }
 
   requestNewsList(categoryItem_number) {
     fetch(
-      `http://13.209.12.87:8000/news?offset=1&tag_num=${categoryItem_number}`,
+      `http://10.58.5.78:8080/news?offset=1&tag_num=${categoryItem_number}`,
       {
         method: "GET",
         headers: {
@@ -77,7 +72,6 @@ class NewsHome extends React.Component {
   };
 
   render() {
-
     return (
       <>
         <div className="NewsWrap">
@@ -100,19 +94,19 @@ class NewsHome extends React.Component {
               </div>
               <div className="design">
                 {this.state.newsList.map((item, index) => {
-                  if (item !== "") {
-                    return (
-                      <Link to={`/news/${item.id}`}>
-                        <HomeNewsItem
-                          key={index}
-                          category={item.tag}
-                          title={item.title}
-                          summary={item.content}
-                          thumbnail={item.image_url}
-                        />
-                      </Link>
-                    );
-                  }
+                  // if (item !== "") {
+                  return (
+                    <Link to={`/news/${item.id}`}>
+                      <HomeNewsItem
+                        key={index}
+                        category={item.tag}
+                        title={item.title}
+                        summary={item.content}
+                        thumbnail={item.image_url}
+                      />
+                    </Link>
+                  );
+                  // }
                 })}
               </div>
             </div>
@@ -120,6 +114,7 @@ class NewsHome extends React.Component {
         </div>
       </>
     );
+  }
 }
 
 export default NewsHome;

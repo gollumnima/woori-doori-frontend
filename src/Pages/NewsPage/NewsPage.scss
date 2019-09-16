@@ -49,7 +49,7 @@
       }
     }
   }
-  .commnet_title {
+  .comment_title {
     margin-top: 100px;
     margin-bottom: 10px;
   }
@@ -72,6 +72,35 @@
         border-radius: 10px;
         font-size: 1rem;
         margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .news_page_total_wrap {
+    width: 100%;
+    max-width: 590px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .newsie {
+    display: inline-flex;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .news_page_total_wrap {
+    margin-left: 15px;
+    margin-right: 15px;
+    .news_page_container {
+      .news_container {
+        margin-left: 15px;
+        margin-right: 15px;
+        display: inline;
+        .newsie {
+          margin-top: 30px;
+        }
       }
     }
   }

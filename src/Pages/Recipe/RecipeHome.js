@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import RecipeHomeCategory from "../Recipe/RecipeHomeCategory";
-// import Navbar from "../../Components/Home/Navbar";
 import HomeRecipeItem from "../../Components/Home/HomeRecipeItem";
 import "./RecipeHome.scss";
 
@@ -17,7 +16,7 @@ class RecipeHome extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://13.209.12.87:8000/recipe/category", {
+    fetch("http://10.58.5.78:8080/recipe/category", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -34,7 +33,7 @@ class RecipeHome extends React.Component {
 
   requestRecipeList(categoryItem_number) {
     fetch(
-      `http://13.209.12.87:8000/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
+      `http://10.58.5.78:8080/recipe/recipes?category_item_number=${categoryItem_number}&start_offset=0&recipe_count=8`,
       {
         method: "GET",
         headers: {

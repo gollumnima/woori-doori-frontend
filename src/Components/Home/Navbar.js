@@ -20,8 +20,14 @@ class Navbar extends React.Component {
   openMenu = e => {
     if (e.currentTarget.name === "menu_off") {
       this.state.isOpen = 0;
+      // this.setState({
+      //   isOpen: 0
+      // });
     } else {
       this.state.isOpen = !this.state.isOpen;
+      // this.setState({
+      //   isOpen: !this.stateisOpen
+      // });
     }
     this.setState({
       isOpen: this.state.isOpen

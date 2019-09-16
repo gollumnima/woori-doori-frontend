@@ -21,7 +21,7 @@ const ALARM_MESSAGE = {
   WRONG_PW: "Password가 다릅니다."
 };
 
-const SIGN_UP_END_POINT = "http://10.58.1.192:8050/users/signup";
+const SIGN_UP_END_POINT = "http://10.58.5.78:8080/users/signup";
 
 /*************************************************************************
  * SIGNUP CLASS

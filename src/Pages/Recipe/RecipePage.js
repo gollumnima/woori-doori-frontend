@@ -18,7 +18,7 @@ class RecipePage extends React.Component {
 
   componentDidMount() {
     fetch(
-      `http://13.209.12.87:8000/recipe/recipes?category_item_number=${this.props.match.params.category}&start_offset=${this.props.match.params.order}&recipe_count=1`,
+      `http://10.58.5.78:8080/recipe/recipes?category_item_number=${this.props.match.params.category}&start_offset=${this.props.match.params.order}&recipe_count=1`,
       {
         method: "GET",
         headers: {
@@ -33,8 +33,6 @@ class RecipePage extends React.Component {
         this.setState({
           recipeDetail: response.result[0]
         });
-
-        // console.log(response);
       });
   }
 
@@ -61,7 +59,6 @@ class RecipePage extends React.Component {
             </div>
           </div>
         </div>
-        {/* <Comment /> */}
       </>
     );
   }

@@ -11,8 +11,6 @@ class RecipeHomeCategory extends React.Component {
   };
 
   render() {
-    console.log("확인", this.props);
-
     let borderColor = this.props.selected
       ? "3px solid orange"
       : "2px solid #bdbdbd";

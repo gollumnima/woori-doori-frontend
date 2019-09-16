@@ -1,11 +1,10 @@
 import React from "react";
-import Navbar from "../../Components/Home/Navbar";
 import { withRouter } from "react-router-dom";
 import "./Login.scss";
 import Logo from "./wooridoori.png";
 import { Link } from "react-router-dom";
 
-const SIGN_IN_END_POINT = "http://13.209.12.87:8000/users/signin";
+const SIGN_IN_END_POINT = "http://10.58.5.78:8080/users/signin";
 window.Kakao.init("291f1b347d863f6fa9e2359a36732f6c");
 class Login extends React.Component {
   constructor() {
