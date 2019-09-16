@@ -26,14 +26,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 4; /* 라인수 */
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       word-wrap: break-word;
       line-height: 1.2em;
-      // width: 150px;
-      // overflow: hidden;
-      // white-space: nowrap;
-      // text-overflow: ellipsis;
       margin-top: 20px;
     }
   }

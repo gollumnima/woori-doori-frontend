@@ -1,7 +1,7 @@
 import React from "react";
 import "./NewsPage.scss";
 import Comment from "../../Components/Home/Comment";
-import { userInfo } from "os";
+
 class NewsPage extends React.Component {
   constructor() {
     super();
@@ -16,7 +16,7 @@ class NewsPage extends React.Component {
     this.setState({ isValue: e.target.value });
   };
   componentDidMount() {
-    fetch(`http://13.209.12.87:8000/news/${this.props.match.params.id}`)
+    fetch(`http://10.58.5.78:8080/news/${this.props.match.params.id}`)
       .then(response => response.json())
       .then(response => {
         this.setState({
@@ -25,7 +25,7 @@ class NewsPage extends React.Component {
       });
   }
   commentBtn = () => {
-    fetch("http://13.209.12.87:8000/news_comments/1", {
+    fetch("http://10.58.5.78:8080/news_comments/1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ class NewsPage extends React.Component {
     })
       .then(response => response.json())
       .then(response => {
-        fetch("http://13.209.12.87:8000/news_comments/1", {
+        fetch("http://10.58.5.78:8080/news_comments/1", {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -77,7 +77,7 @@ class NewsPage extends React.Component {
             <div className="newsie">
               <img src={NewsList.image_url} alt={NewsList.title}></img>
             </div>
-            <div className="commnet_title">댓글</div>
+            <div className="comment_title">댓글</div>
           </div>
           <div className="comment_warp">
             <textarea
@@ -98,7 +98,6 @@ class NewsPage extends React.Component {
           </div>
         </div>
       </div>
-      // {/* })} */}
     );
   }
 }
